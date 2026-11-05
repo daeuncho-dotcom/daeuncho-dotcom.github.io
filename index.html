@@ -1,0 +1,1244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f9fc">
+<meta name="description" content="DAEUN CHO — Business Strategy · Data · Operations 포트폴리오">
+<title>DAEUN CHO — Portfolio</title>
+<style>
+:root{--ink:#172337;--sub:#627086;--blue:#245bc1;--line:#e2e7ee;--bg:#f8f9fc;--card:#fff;--navy:#15223a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,Pretendard,'Noto Sans KR','Apple SD Gothic Neo',-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.container{max-width:1160px;margin:auto;padding:0 34px}
+
+/* nav */
+.topbar{position:sticky;top:0;z-index:50;background:#ffffffec;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{display:flex;min-height:72px;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:20px;letter-spacing:-1.2px;font-weight:860;white-space:nowrap}
+.logo span{color:var(--blue)}
+.navlinks{display:flex;gap:30px}
+.navlinks a{font-size:13px;color:#657287;font-weight:550}
+.navlinks a.active,.navlinks a:hover{color:var(--blue)}
+
+/* type */
+.overline{font-size:11px;letter-spacing:2px;color:var(--blue);text-transform:uppercase;font-weight:800}
+.lead{font-size:16px;line-height:1.9;color:#5a687a;max-width:680px;word-break:keep-all}
+.muted{color:var(--sub);font-size:13px}
+.mini{font-size:10px;letter-spacing:1.3px;color:var(--blue);font-weight:800;text-transform:uppercase}
+
+/* hero */
+.hero{padding:100px 0 70px}
+.hero h1{font-size:clamp(48px,7.5vw,96px);line-height:1.06;letter-spacing:-4px;margin:22px 0 30px;font-weight:820}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.button{border:0;background:var(--blue);color:#fff;border-radius:7px;padding:13px 18px;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:10px}
+.button.light{background:#fff;color:var(--ink);border:1px solid #dce3ec}
+.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);padding:26px 0;gap:20px}
+.metrics strong{display:block;font-weight:830;font-size:32px;letter-spacing:-1.2px}
+.metrics span{font-size:12px;color:var(--sub)}
+
+/* sections */
+.section{padding:70px 0}
+.heading{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:26px;gap:20px}
+.heading h2{font-size:32px;letter-spacing:-1px;margin:9px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+
+/* cards */
+.workcard{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;min-width:0}
+.workcard:hover{transform:translateY(-3px);box-shadow:0 16px 38px #18335b13}
+.thumb{height:170px;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:18px 20px}
+.thumb .num{font-size:12px;letter-spacing:2px;font-weight:700;opacity:.75}
+.thumb .big{font-size:38px;font-weight:830;letter-spacing:-1.5px;line-height:1}
+.thumb .big small{display:block;font-size:11px;letter-spacing:.5px;font-weight:600;opacity:.8;margin-top:8px}
+.thumb.img{background-size:cover;background-position:center}
+.thumb.img::before,.thumb.img::after{display:none}
+.casethumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.linkrow{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.viz{margin-top:34px;padding:24px 22px;border:1px solid #dce7f4;border-radius:12px;background:#f7faff}
+.viztitle{margin:6px 0 16px!important;padding:0!important;border:0!important}
+.vizgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vizcard{background:#fff;border:1px solid #e1e9f4;border-radius:10px;padding:18px 20px}
+.vizcard.wide{grid-column:span 2}
+.vizcard h4{font-size:14px;margin:0 0 14px;color:#141a2a}
+.vbar{display:grid;grid-template-columns:56px 1fr 52px;align-items:center;gap:10px;font-size:12.5px;color:#5b6f8a;margin-bottom:10px}
+.vbar .track{height:12px;background:#edf1f7;border-radius:6px;overflow:hidden}
+.vbar .track i{display:block;height:100%;border-radius:6px}
+.vbar b{text-align:right;color:#141a2a;font-size:13px}
+.vnote{margin:14px 0 0;font-size:13px;color:#5b6f8a}.vnote strong{color:#25569b}
+.vstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.vstats strong{display:block;font-size:20px;font-weight:800;color:#25569b;letter-spacing:-.3px;word-break:keep-all}
+.vstats span{display:block;margin-top:6px;font-size:12px;color:#5b6f8a;line-height:1.5;word-break:keep-all}
+.vflow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.vflow li{background:#f2f6fc;border-radius:8px;padding:14px 12px;font-size:12.5px;line-height:1.55;color:#2d3a52;word-break:keep-all}
+.vflow em{display:inline-flex;width:22px;height:22px;border-radius:50%;background:#25569b;color:#fff;font-style:normal;font-size:12px;font-weight:700;align-items:center;justify-content:center;margin-bottom:8px}
+.vflow span{display:block}
+@media(max-width:640px){.vizgrid{grid-template-columns:1fr}.vizcard.wide{grid-column:span 1}.vflow{grid-template-columns:1fr 1fr}.vstats{grid-template-columns:1fr}}
+.figs{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin:18px 0 6px}.figs figure{grid-column:span 6;margin:0;border:1px solid #e1e7ef;border-radius:10px;overflow:hidden;background:#fff}.figs figure.half{grid-column:span 3}.figs figure.third{grid-column:span 2}@media(max-width:640px){.figs figure.half,.figs figure.third{grid-column:span 6}}.figs img{display:block;width:100%;height:auto}.figs figcaption{font-size:12px;color:#6b7a90;padding:9px 14px;border-top:1px solid #eef2f7}
+.detailcover{margin:28px 0 0;border-radius:12px;overflow:hidden;background:#0a0b14}
+.detailcover img{display:block;width:100%;height:auto}
+.thumb::after{content:"";position:absolute;right:-40px;top:-40px;width:170px;height:170px;border-radius:50%;background:#ffffff14}
+.thumb::before{content:"";position:absolute;right:30px;bottom:-60px;width:130px;height:130px;border-radius:50%;background:#ffffff0f}
+.workcard .body{padding:22px;display:flex;flex:1;flex-direction:column;min-height:200px}
+.workcard h3{font-size:20px;letter-spacing:-.7px;margin:12px 0 6px}
+.workcard p{font-size:13px;color:#6b788a;line-height:1.65;margin:0}
+.cardbottom{border-top:1px solid #edf0f4;padding-top:14px;margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cardbottom strong{font-size:16px}
+.arrow{font-size:21px;color:var(--blue)}
+
+/* dark band */
+.dark{background:var(--navy);color:#fff}
+.dark .heading{border-color:#39465b}
+.dark .muted{color:#b1bdce}
+.archivegrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.archivecard{background:#20314b;border:1px solid #394960;border-radius:9px;overflow:hidden;transition:transform .2s;display:block}
+.archivecard:hover{transform:translateY(-3px)}
+.archivecard .bar{height:6px}
+.archivecard .copy{padding:16px}
+.archivecard h3{font-size:15px;margin:9px 0 7px}
+.archivecard p{font-size:11.5px;line-height:1.6;color:#b6c1d0;margin:0}
+.archivecard .mini{color:#8eb2ff}
+
+.footer{background:#101c30;color:#afbacb;padding:28px 0;font-size:11px}
+.footrow{display:flex;justify-content:space-between;gap:15px}
+
+/* detail pages */
+.pagehero{padding:60px 0 34px}
+.pagehero h1{font-size:clamp(34px,5.5vw,60px);letter-spacing:-2px;line-height:1.15;margin:16px 0}
+.crumb{font-size:12px;color:#708198;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.crumb a{color:var(--blue)}
+.detaillayout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;padding-bottom:90px}
+.sidebar{align-self:start;position:sticky;top:96px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:19px}
+.field{padding:12px 0;border-bottom:1px solid #edf0f4}
+.field:last-child{border:0}
+.field small{display:block;font-size:10px;letter-spacing:1px;color:#8c9aae;margin-bottom:6px;text-transform:uppercase}
+.field strong{font-size:13px;line-height:1.6;font-weight:650}
+.readme{background:#fff;border:1px solid #dfe6ed;border-radius:10px;overflow:hidden}
+.readmebar{padding:14px 22px;border-bottom:1px solid #e3e8ef;background:#f3f6fa;font-size:12px;font-weight:750;display:flex;justify-content:space-between}
+.readmeinner{padding:30px 38px 40px}
+.readmeinner>h2{font-size:28px;letter-spacing:-1px;line-height:1.4;margin:10px 0}
+.readmeinner h3{font-size:18px;border-bottom:1px solid #e6eaf0;padding-bottom:10px;margin:34px 0 14px}
+.readmeinner p{font-size:14px;color:#59677a;line-height:1.95;word-break:keep-all;margin:0}
+.resultgrid{display:grid;grid-template-columns:repeat(var(--cols,3),1fr);gap:8px;margin-top:6px}@media(max-width:640px){.resultgrid{grid-template-columns:1fr}}
+.rcard{min-height:112px;background:#f2f6fc;border:1px solid #dce7f4;border-radius:8px;padding:20px 14px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:7px}
+.rcard b{font-size:18px;font-weight:800;color:#25569b;line-height:1.4;letter-spacing:-.3px;word-break:keep-all}
+.rcard small{font-size:12px;color:#5b6f8a;line-height:1.6;word-break:keep-all}
+.rcard.plain b{font-size:18px;font-weight:800;color:#25569b}
+.readmeinner .md p{margin:0 0 14px}
+.readmeinner h4{font-size:15px;margin:26px 0 10px;color:var(--ink)}
+.mdlist{margin:6px 0 16px;padding-left:20px;font-size:14px;color:#59677a;line-height:1.95}
+.mdlist li{margin:2px 0}
+.mdlist strong,.readmeinner .md p strong{color:var(--ink)}
+.outcome .mdlist{margin:10px 0 0}
+.pillrow{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0}
+.pill{border:1px solid #dce6f2;color:#426aa2;background:#f3f7fc;border-radius:30px;padding:7px 11px;font-size:11px;font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0}
+.step{background:#f2f6fc;border:1px solid #dce7f4;border-radius:8px;padding:15px 10px;text-align:center;color:#25569b;font-size:12px;font-weight:700}
+.step small{display:block;font-weight:500;opacity:.8}
+.outcome{background:#edf4ff;border-left:3px solid var(--blue);padding:20px 23px;margin-top:6px}
+.outcome strong{font-size:25px;color:var(--blue)}
+.outcome p{margin-top:6px}
+.casegrid{display:grid;gap:14px;margin:24px 0}
+.case{display:block;border:1px solid var(--line);border-radius:9px;padding:20px;background:#fff;transition:border-color .2s}
+.case:hover{border-color:var(--blue)}
+.case strong{display:block;margin:7px 0;line-height:1.5}
+.case p{color:var(--sub);font-size:12.5px}
+
+/* timeline */
+.timeline{border-top:1px solid var(--line);margin-top:28px}
+.timeitem{padding:26px 0;display:grid;grid-template-columns:170px 1fr;border-bottom:1px solid var(--line);gap:18px}
+.timeitem h3{margin:0;font-size:19px}
+.bul{margin:12px 0 0;padding-left:20px;color:#59677a;font-size:13.5px;line-height:1.95}
+
+/* info */
+.info-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.panel{background:#fff;border:1px solid #dfe6ef;border-radius:13px;padding:24px}
+.panel h3{font-size:17px;margin:0 0 14px}
+.item{padding:13px 0;border-top:1px solid #edf0f5}
+.item strong{font-size:13.5px;display:block;margin-top:4px}
+.item p{font-size:12.5px;color:#66758a;margin:3px 0 0;line-height:1.7}
+.awardrow{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid #e0e6ee}
+.awardrow strong{font-size:14px}
+.awardrow p{font-size:12.5px;color:#66758a;margin:2px 0 0}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+.filter{padding:9px 14px;background:#fff;border:1px solid var(--line);border-radius:30px;font-size:12px;color:#637186}
+.filter.selected{background:#193964;color:#fff;border-color:#193964}
+
+@media(max-width:900px){
+  .grid,.archivegrid{grid-template-columns:repeat(2,1fr)}
+  .detaillayout{grid-template-columns:1fr}
+  .sidebar{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:0 15px}
+}
+@media(max-width:600px){
+  .container{padding:0 20px}
+  .nav{min-height:62px}
+  .navlinks{gap:14px}
+  .navlinks a{font-size:11.5px}
+  .hero{padding:64px 0 44px}
+  .hero h1{letter-spacing:-2.5px}
+  .lead{font-size:14px}
+  .metrics strong{font-size:22px}
+  .metrics span{font-size:10px}
+  .section{padding:48px 0}
+  .heading h2{font-size:25px}
+  .grid{grid-template-columns:1fr}
+  .archivegrid{grid-template-columns:1fr 1fr;gap:9px}
+  .archivecard .copy{padding:12px}
+  .archivecard h3{font-size:12.5px}
+  .archivecard p{font-size:10.5px}
+  .readmeinner{padding:22px 19px 30px}
+  .readmeinner>h2{font-size:22px}
+  .steps{grid-template-columns:1fr}
+  .timeitem{grid-template-columns:1fr;gap:6px}
+  .info-columns{grid-template-columns:1fr}
+  .footrow{flex-direction:column}
+}
+@media print{.topbar,.footer{display:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a href="#/" class="logo" aria-label="홈">DAEUN<span>.</span>CHO</a>
+    <nav class="navlinks" aria-label="주 메뉴">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/projects" data-nav="projects">Projects</a>
+      <a href="#/about" data-nav="about">Information</a>
+    </nav>
+  </div>
+</header>
+<main id="app"></main>
+<footer class="footer">
+  <div class="container footrow">
+    <span>© 2026 DAEUN CHO</span>
+    <span>Business · Strategy · Data</span>
+  </div>
+</footer>
+
+<script>
+const DATA = {
+  projects: [
+    { id:"toss", number:"01", org:"토스페이먼츠", title:"거래 데이터 분석을 통한 위험 식별 및 대응 프로세스 개선", subtitle:"Risk Management & Operations",
+      period:"2026.01 — 2026.07", role:"Risk Management Team · Assistant", viz:"toss", metric:"약 4.2억 원", metricLabel:"잠재 손실 방어", hue:[218,60,28],
+      lead:"월 2,300여 개 가맹점의 거래·운영 데이터를 모니터링하고, 이상 징후를 조치 이행까지 연결했습니다.",
+      tags:["데이터 기반 판단","운영 관리","리스크 대응"],
+      overview:`토스페이먼츠 Risk Management Team에서 월 2,300여 개 가맹점의 거래·운영 데이터를 모니터링하고, 이상 징후를 파악하여 잠재적인 손실 위험을 관리했습니다. 다양한 위험 지표와 가맹점의 운영 상황을 종합적으로 검토해 대응 우선순위를 설정하고, 위험 수준에 따른 조치 방안을 수립했습니다.
+
+특히 위험 발견 이후 영업부서, 유관부서, 거래처와 협의하여 실제 조치가 이행되도록 관리하는 업무를 수행했습니다. 반복적으로 발생하는 위험 사례를 유형화하고 판단·대응 프로세스를 개선하여 위험관리 업무의 일관성과 실행 효율성을 높였습니다.`,
+      problem:`전자결제 가맹점의 위험은 거래 규모, 카드 민원, 취소 비율, 정산 구조, 사업 운영 방식 등 다양한 요인에 의해 발생합니다. 특정 지표에서 이상 징후가 발견되더라도 실제 손실 가능성이나 조치의 시급성은 거래 맥락과 가맹점 상황에 따라 달라질 수 있습니다.
+
+또한 월 2,300여 개 가맹점을 동시에 관리해야 하는 환경에서는 모든 이상 징후에 동일한 대응을 적용하기 어렵습니다. 위험도를 정확하게 구분하고, 손실 가능성이 높은 가맹점부터 우선적으로 관리할 수 있는 판단 기준이 필요했습니다.
+
+위험을 발견하더라도 거래처의 증빙 제출이나 추가 조치가 지연되면 잠재적인 손실이 지속될 수 있다는 점도 확인했습니다. 따라서 위험의 식별뿐 아니라 조치 이행 여부와 후속 관리까지 포함한 대응 체계가 중요하다고 판단했습니다.`,
+      analysis:`가맹점별 거래 규모와 취소금액 비율, 카드 민원 발생 현황, 정산 방식 및 사업 운영 상태를 지속적으로 점검했습니다. 개별 지표의 수치뿐 아니라 과거 거래 흐름과 비교해 급격한 변화가 발생했는지 확인하고, 여러 위험 신호가 동시에 나타나는 가맹점을 우선적으로 검토했습니다.
+
+이상 거래가 발견된 경우 가맹점의 사업 형태와 매출 발생 구조, 고객 민원 내용, 증빙자료 및 기존 조치 이력을 종합하여 위험요인을 분석했습니다. 단일 지표만으로 판단하기 어려운 사례에서는 연관 가맹점의 운영 방식과 사업정보를 교차 검토하여 추가적인 위험 가능성을 확인했습니다.
+
+특히 사업 구조가 유사한 가맹점 6곳의 연관성을 파악하고 이미지 도용 등 비정상적인 운영 정황을 검토했습니다. 개별 가맹점의 거래 내역만으로 확인하기 어려웠던 위험요인을 가맹점 간 연결 관계와 사업 운영 방식의 유사성을 통해 파악하고, 조치 근거를 축적했습니다.
+
+또한 위험 발견 이후의 대응 과정에서 조치가 지연되거나 미이행되는 사례를 검토했습니다. 반복적으로 나타나는 위험 유형과 처리 단계를 구분하고, 가맹점별 조치 기한 및 이행 상태를 관리하는 방식의 개선 필요성을 도출했습니다.`,
+      action:`가맹점별 위험 수준과 예상 손실 가능성을 고려하여 대응 방안을 차등 적용했습니다. 우선 추가 확인이 필요한 가맹점에는 증빙 및 소명자료를 요청하고, 위험 수준이 높은 경우에는 정산보류, 보증보험, 취소한도 및 정산주기 조정 등 위험 완화 조치를 검토했습니다.
+
+이 과정에서 영업부서 및 유관부서와 거래처 사이의 조치 조건과 이행 일정을 조율했습니다. 거래처의 운영 상황과 회사의 손실 방어 필요성을 함께 고려하면서 필요한 조치가 실행될 수 있도록 협의하고, 후속 조치의 진행 상태를 지속적으로 추적했습니다.
+
+반복적으로 발생하는 위험 사례에 대해서는 이상 징후, 위험 판단 근거, 권고 조치 및 이행 여부를 유형별로 정리했습니다. 이를 통해 유사 사례에서 판단 기준을 일관되게 적용하고, 미이행 건에 대한 추가 확인과 후속 대응이 누락되지 않도록 관리 프로세스를 개선했습니다.`,
+      result:`- 연관 가맹점 6곳의 위험 징후를 파악하고 단계별 조치를 통해 약 **4.2억 원의 잠재 손실 방어**
+- 반복 사례의 유형화 및 후속 조치 관리 개선
+- 조치 미이행률 **9.35% → 4.05%** 개선` },
+
+    { id:"handyy", number:"02", org:"HANDYY", title:"고객 A/S 데이터 분석을 통한 수제화 제품 및 생산 프로세스 개선", subtitle:"Product & Process Improvement",
+      period:"2022.03 — 2023.02", role:"경영학회 인액터스 · Project Manager", metric:"535%", metricLabel:"크라우드펀딩 달성률", hue:[200,55,30],
+      lead:"A/S 신청 13%를 주문·제작 프로세스의 문제로 보고, 채촌 키트 도입과 원가 협상으로 개선했습니다.",
+      tags:["고객 문제 해결","제품 개선","원가 관리"],
+      overview:`경영학회 인액터스에서 주문제작 수제화 브랜드 HANDYY의 Project Manager를 맡아 제품 기획부터 협력업체 발굴, 생산, 판매, 고객 관리에 이르는 사업 운영 전반을 관리했습니다.
+
+고객 수요에 맞춘 수제화 상품을 기획하고 제작업체 10곳 이상의 공급가격과 최소 발주량, 생산 조건을 비교하여 협력업체를 선정했습니다. 판매 이후에는 고객 문의와 A/S 데이터를 분석하여 제품 및 주문 프로세스의 문제를 개선하고, 브랜드 홈페이지를 직접 제작하여 구매 전 정보 제공 체계를 정비했습니다.`,
+      problem:`주문제작 수제화는 고객의 발 길이와 발볼, 발등 높이 등 개인별 신체 특성을 정확하게 반영해야 하는 상품입니다. 그러나 초기 판매 과정에서 고객이 제공하는 사이즈 정보와 실제 제작에 필요한 정보 사이에 차이가 발생하면서 A/S 신청 비율이 13%에 달했습니다.
+
+단순히 불량 제품을 교환하거나 수선하는 방식으로는 동일한 문제가 반복될 가능성이 있었습니다. 특히 고객이 자신의 발 치수를 정확하게 측정하기 어렵고, 제품 소재와 굽 높이, 맞춤 제작 옵션에 대한 정보를 충분히 확인하기 어렵다는 점이 문제였습니다.
+
+이에 A/S 발생 원인을 개별 제품의 품질 문제에 한정하지 않고, 구매 전 정보 수집부터 주문·제작·배송까지 이어지는 운영 프로세스의 문제로 정의했습니다.`,
+      analysis:`초기 판매에서 접수된 고객 문의와 A/S 신청 내용을 검토하고, 불편요인을 사이즈 측정 문제, 제품 정보 부족, 주문 정보 전달 문제 등으로 구분했습니다.
+
+특히 고객이 일반적인 기성화 사이즈를 기준으로 주문할 경우 실제 발 형태와 맞춤 제작 상품의 특성이 충분히 반영되지 않을 수 있다는 점에 주목했습니다. 고객이 구매 전에 확인할 수 있는 정보와 제작업체에 전달되는 주문 정보를 비교하여 개선이 필요한 단계를 파악했습니다.
+
+또한 제작업체 10곳 이상의 단가, 최소 발주량, 제작 방식 및 생산 조건을 비교했습니다. 협력업체별 생산 비용과 공급 조건을 검토하여 품질을 유지하면서도 원가를 절감할 수 있는 협상 기준을 마련했습니다.
+
+고객이 구매 전에 상품의 구조와 제작 방식을 이해할 수 있도록 기존 정보 제공 과정을 점검하고, 제품별 특징과 맞춤 제작 절차를 체계적으로 안내할 필요성을 도출했습니다.`,
+      action:`사이즈 측정의 부정확성을 개선하기 위해 고객이 직접 발 치수를 확인할 수 있는 종이 채촌 키트를 도입했습니다. 고객이 주문 전에 발 길이와 형태를 보다 구체적으로 측정하고, 제작에 필요한 정보를 전달할 수 있도록 주문 과정을 개선했습니다.
+
+브랜드 홈페이지도 직접 제작했습니다. 제품별 디자인과 소재, 커스터마이징 옵션, 맞춤 제작 절차 및 채촌 방법을 구분하여 안내하고, 구매 전 고객이 필요한 정보를 확인할 수 있도록 웹사이트의 정보 구조를 설계했습니다.
+
+제작업체와는 주문 정보 전달 및 생산 조건을 조율하여 고객 요구사항이 실제 제작 과정에 반영될 수 있도록 관리했습니다. 동시에 공급가격과 발주 조건을 비교·협상하여 제품 원가를 절감했습니다.
+
+이후 개선된 주문 프로세스를 적용하여 차기 판매를 진행하고, A/S 접수 여부를 기준으로 개선 효과를 확인했습니다.`,
+      result:`- 차기 판매에서 **A/S 신청 0건** 달성
+- 협력업체 비교·협상을 통한 **원가 약 7% 절감**
+- 크라우드펀딩 목표 대비 **535% 달성**
+- 수제화 브랜드 홈페이지 직접 제작 및 운영`,
+      website:"https://handyy.wixsite.com/handyy",
+      links:[{label:"HANDYY 텀블벅 성과 확인하기", url:"https://tumblbug.com/handyy"}],
+      figures:[
+        {at:0, src:"assets/handyy-shoe-ivory.webp", cap:"HANDYY 아이보리", third:true},
+        {at:0, src:"assets/handyy-shoe-beige.webp", cap:"HANDYY 베이지", third:true},
+        {at:0, src:"assets/handyy-shoe-black.webp", cap:"HANDYY 블랙", third:true},
+        {at:5, src:"assets/handyy-funding.webp", cap:"텀블벅 펀딩 결과 — 목표 대비 535% 달성, 후원자 20명"}
+      ] },
+
+    { id:"beau", number:"03", org:"BE;AU", title:"호텔 폐침구 업사이클링 사업의 공급망 구축 및 사업 운영", subtitle:"Business Development & Supply Chain",
+      period:"2023.03 — 2024.08", role:"창업 프로젝트 · Project Manager", metric:"389%", metricLabel:"크라우드펀딩 달성률", hue:[168,45,26],
+      lead:"폐침구 공급처 발굴부터 협력 계약, 펀딩까지 진행하고 사업 중단 이후 공급망 사전 검증 기준을 세웠습니다.",
+      tags:["사업 기획","파트너십","공급망 관리"],
+      overview:`호텔에서 폐기되는 침구류를 재활용하여 새로운 제품으로 제작하는 업사이클링 브랜드 BE;AU를 기획했습니다. Project Manager로서 사업모델 수립, 원자재 공급처 발굴, 제작업체 선정, 협력 조건 조율, 제품 기획 및 크라우드펀딩을 총괄했습니다.
+
+호텔의 폐침구 처리 문제와 친환경 제품에 대한 고객 수요를 연결하여 사업기회를 발굴하고, 실제 제품 생산을 위한 공급망과 협력업체 네트워크를 구축했습니다.`,
+      problem:`호텔에서는 위생 및 서비스 품질 관리 기준에 따라 일정 기간 사용한 침구류를 교체·폐기합니다. 이러한 침구류를 업사이클링 제품의 원재료로 활용할 수 있지만, 안정적인 수급 체계가 마련되지 않으면 지속적인 제품 생산이 어렵습니다.
+
+특히 호텔의 침구 교체 시점과 제작업체의 생산 일정은 각각 다른 기준으로 운영됩니다. 원재료의 품질과 수량뿐 아니라 공급 시기, 보관 및 가공 가능 여부까지 충족되어야 실제 상품화가 가능했습니다.
+
+따라서 친환경 아이디어의 사업성을 검토하는 동시에 원재료 확보부터 제품 생산까지 이어지는 공급망의 실행 가능성을 검증해야 했습니다.`,
+      analysis:`호텔 침구류의 폐기 및 교체 구조를 조사하고 업사이클링 제품의 시장 수요와 상품화 가능성을 검토했습니다. 폐침구를 활용할 수 있는 제품 유형과 제작 방식을 검토하고, 원재료 공급과 생산을 담당할 협력업체의 조건을 비교했습니다.
+
+초기에는 원재료 공급처가 확보되지 않아 호텔과 제작업체를 대상으로 약 50건의 아웃콜을 진행했습니다. 기업별 사업 특성과 폐침구 처리 방식, 협업 가능성을 파악하여 제안 대상을 선정했습니다.
+
+협력업체와의 논의에서는 공급 가능 수량, 침구 폐기 일정, 원재료 상태, 제작 가능 시점 등을 확인했습니다. 또한 크라우드펀딩을 활용하여 제품의 초기 수요를 검증하고, 고객의 구매 반응을 통해 사업 가능성을 검토했습니다.
+
+다만 사업 진행 과정에서 호텔의 원재료 배출 시점과 제작업체의 가동 일정이 일치하지 않는 문제가 발생했습니다. 이를 통해 제품 수요와 별개로 원재료 공급 일정과 생산 계획의 정합성이 사업 지속 가능성을 결정하는 중요한 요소임을 확인했습니다.`,
+      action:`호텔과 제작업체를 대상으로 기업소개서 및 협업제안서를 직접 작성하고 협의를 진행했습니다. 그 결과 한화호텔앤드리조트와 협력 계약을 체결하여 원재료 공급 기반을 확보했습니다.
+
+이후 협력업체별 역할과 공급 조건을 정리하고, 제품 기획 및 크라우드펀딩을 진행했습니다. 친환경 가치와 제품 활용성을 전달하는 상품 구성 및 판매 전략을 수립하여 초기 고객 수요를 확보했습니다.
+
+그러나 실제 생산 단계에서 원재료 공급 일정과 제작업체의 생산 일정이 불일치하면서 사업을 중단하게 되었습니다. 이후 공급 수량, 납기, 제작 가능 시점 및 협력업체별 책임 범위를 사전에 점검할 수 있도록 체크리스트를 마련했습니다.
+
+제품 기획 단계의 사업성 검토에 공급망 및 운영 조건에 대한 검증 절차를 추가하여 유사한 문제가 반복되지 않도록 개선했습니다.`,
+      result:`- 한화호텔앤드리조트 협력 계약 체결
+- 약 50건의 아웃콜을 통한 호텔·제작업체 발굴
+- 크라우드펀딩 목표 대비 **389% 달성**
+- 공급 일정 불일치에 따른 사업 중단 이후 공급망 사전 검증 기준 수립`,
+      figures:[
+        {at:0, src:"assets/beau-pouch-bed.webp", cap:"BE;AU 트래블 파우치", half:true},
+        {at:0, src:"assets/beau-pouch-kit.webp", cap:"파우치 구성 및 활용 예시", half:true},
+        {at:5, src:"assets/beau-funding.webp", cap:"텀블벅 펀딩 결과 — 목표 대비 389% 달성, 후원자 33명"}
+      ],
+      links:[{label:"BE;AU 텀블벅 성과 확인하기", url:"https://tumblbug.com/beau"}] },
+
+    { id:"samsung", number:"04", org:"삼성증권", title:"고객 행동과 시장 변화에서 사업 기회를 찾다", subtitle:"Customer & Market Strategy",
+      period:"2025.05 — 2025.09", role:"디지털트레이딩고객팀 인턴 · 대학생 멤버십 프로젝트", metric:"3 Case Studies", metricLabel:"AT WORK · 해외주식 · 대체거래소", hue:[232,55,30],
+      lead:"자산관리 서비스 락인, 해외주식 고객 확대, 거래시간 확대 대응까지 세 가지 과제를 정리했습니다.",
+      tags:["고객 세분화","CRM","시장 분석"], children:["samsung-work","samsung-overseas","samsung-market"] },
+
+    { id:"bluebottle", number:"05", org:"블루보틀", title:"시장·상권 분석과 손익 추정을 통한 신규 매장 출점 전략 수립", subtitle:"Market Entry & Business Feasibility",
+      period:"2023.05 — 2023.06", role:"브랜드마케팅 직무부트캠프 개인 기획안", metric:"익선동", metricLabel:"신규 출점 후보지 선정", hue:[24,60,34],
+      lead:"3C·SWOT·STP 분석으로 목표 고객을 정하고, 익선동 출점의 사업성을 손익 추정으로 검토했습니다.",
+      tags:["시장 분석","상권 분석","손익 추정"],
+      overview:`블루보틀의 국내 시장 진출 상황을 가정하고, 프리미엄 커피 브랜드의 시장 포지셔닝과 신규 매장 출점 전략을 수립했습니다.
+
+3C·SWOT·STP 분석을 통해 목표 고객과 경쟁 환경을 파악하고, 서울 익선동을 신규 출점 후보지로 선정했습니다. 이후 매장 콘셉트와 상품 구성, 고객 유입 및 유지 전략을 설계하고, 예상 매출과 비용 구조를 바탕으로 사업성을 검토했습니다.`,
+      problem:`국내 커피 시장에서는 스타벅스 리저브, 이디야 랩 등 프리미엄 커피 경험을 제공하는 브랜드가 경쟁하고 있었습니다. 신규 브랜드가 시장에서 경쟁력을 확보하기 위해서는 단순히 고품질 커피를 제공하는 것을 넘어 고객이 브랜드를 선택할 이유와 매장 방문 경험을 차별화해야 했습니다.
+
+특히 프리미엄 커피의 높은 가격을 수용할 고객군을 구체적으로 설정하고, 이들의 소비 성향에 맞는 매장 환경과 상품 구성을 마련할 필요가 있었습니다.
+
+동시에 브랜드 선호도와 매장의 사업성은 구분하여 검토해야 했습니다. 신규 출점에 따른 임대료와 인건비, 원가 등 비용 구조를 고려하여 실제 매장 운영의 수익성을 확인하는 것이 필요했습니다.`,
+      analysis:`먼저 3C 분석을 통해 시장과 고객, 경쟁 브랜드를 분석했습니다. 자신을 위한 소비에 높은 가치를 부여하는 미코노미 트렌드와 프리미엄 커피 수요를 조사하고, 스타벅스 리저브와 이디야 랩의 가격, 메뉴 구성, 서비스 및 매장 경험을 비교했습니다.
+
+SWOT 분석에서는 블루보틀의 우수한 커피 품질과 명확한 브랜드 정체성을 강점으로, 높은 가격과 상대적으로 제한적인 메뉴 구성을 약점으로 검토했습니다.
+
+STP 분석에서는 연령, 직업, 거주지, SNS 활용도, 고급 커피 선호도 및 소비 성향을 기준으로 고객을 세분화했습니다. 그중 트렌드에 민감하고 자신을 위한 소비에 적극적이며 서울을 중심으로 활동하는 2030 여성 고객을 1차 목표 고객으로 설정했습니다.
+
+자체 FGI 10명을 대상으로 프랜차이즈 커피 브랜드 이용 과정에서의 불편요인을 조사했습니다. 이를 바탕으로 단순한 음료 소비가 아니라 좋은 품질의 커피를 편안하게 즐길 수 있는 매장 경험에 집중하여 브랜드 콘셉트를 구체화했습니다.
+
+신규 출점 후보지로는 익선동을 선정했습니다. 익선동의 한옥 중심 상권 특성과 방문객의 소비 목적, 주요 고객군의 방문 가능성을 검토하고, 전통적인 공간과 프리미엄 커피 경험을 결합할 수 있다고 판단했습니다.
+
+사업성 검토에서는 판매 메뉴별 예상 비중을 설정해 평균 판매 금액을 산출했습니다. 아메리카노의 판매 비중을 30%, 주요 시그니처 메뉴의 판매 비중을 각각 15% 등으로 가정하여 평균 판매 금액을 5,950원으로 추정했습니다. 예상 객수와 판매 금액을 바탕으로 매출을 산출하고, 비용을 고려한 영업이익 추정을 진행했습니다.`,
+      action:`**1. 브랜드 콘셉트 및 포지셔닝**
+
+'나를 위한 한 잔의 여유, 블루보틀'을 핵심 콘셉트로 설정했습니다. 고품질 커피와 여유로운 매장 경험을 브랜드의 주요 가치로 제시하고, 적은 메뉴를 높은 품질로 제공하는 프리미엄 포지셔닝을 수립했습니다.
+
+**2. 익선동 지역 특화 매장**
+
+익선동의 한옥 외관을 활용하면서 내부에는 블루보틀의 화이트 중심 인테리어를 적용하는 매장 전략을 제안했습니다.
+
+국내 소비자의 매장 이용 특성을 고려하여 편안한 좌석과 콘센트, 와이파이 등을 제공하고, 브랜드의 미니멀한 이미지를 유지하면서도 고객 편의성을 높이는 방향으로 공간을 설계했습니다.
+
+**3. 상품 및 메뉴 전략**
+
+싱글 오리진 커피와 제한적인 원두 선택지를 중심으로 메뉴를 구성했습니다. 고객이 과도한 선택 과정 없이 자신의 선호에 맞는 커피를 쉽게 선택할 수 있도록 메뉴 구조를 단순화하고, 국내 고객을 위한 차별화된 디저트와 시그니처 상품을 제안했습니다.
+
+**4. 고객 확보 및 브랜드 경험 전략**
+
+고객이 브랜드 철학을 직접 체험할 수 있는 팝업스토어를 기획했습니다. 바리스타 체험, 향기 마케팅, 미디어아트 및 공간 경험을 활용하여 브랜드가 추구하는 커피의 품질과 여유를 전달하도록 설계했습니다.
+
+또한 B/L/U/E 4단계 멤버십을 제안하여 고객의 방문과 구매를 유도하고, 등급별 혜택을 통해 장기적인 고객 관계를 구축하는 방안을 수립했습니다.
+
+**5. 매장 사업성 및 운영 전략**
+
+예상 객수와 객단가를 기반으로 매출을 추정하고, 주요 비용 항목을 고려하여 손익을 검토했습니다. 기획안에서는 영업이익률 10%를 가정했으며, 초기 프로모션 종료 이후 매출이 감소할 가능성을 고려하여 멤버십 등 고객 유지 전략을 함께 제안했습니다.`,
+      figures:[
+        {at:0, src:"assets/bluebottle-1.webp", cap:"블루보틀 국내 런칭 제안서 — 브랜드 컨셉"},
+        {at:2, src:"assets/bluebottle-2.webp", cap:"3C 분석 — Customer · Company · Competitor"},
+        {at:2, src:"assets/bluebottle-3.webp", cap:"STP 분석 — 시장 세분화·목표 시장·포지셔닝"},
+        {at:2, src:"assets/bluebottle-4.webp", cap:"4P 분석 — Product · Price · Promotion · Place"},
+        {at:4, src:"assets/bluebottle-5.webp", cap:"기대 매출 및 영업이익"}
+      ] },
+
+    { id:"lgu", number:"06", org:"LG유플러스", title:"고객 이용 행태 분석을 통한 맞춤형 통신 요금제 및 통합 마케팅 전략", subtitle:"Product & Marketing Strategy",
+      period:"2025.03 — 2025.06", role:"마케팅전략 팀 프로젝트", metric:"팀 1위", metricLabel:"프로젝트 평가", hue:[330,45,32],
+      lead:"고객 인터뷰와 AI 기반 군집화로 요구를 구조화하고, 조립형 요금제 'YOU PLUS(+)'를 제안했습니다.",
+      tags:["고객 세분화","상품 전략","통합 마케팅"],
+      overview:`통신시장 환경 변화에 대응하여 LG유플러스의 고객 확보와 요금제 경쟁력 강화를 위한 상품·마케팅 전략을 기획했습니다.
+
+SK텔레콤의 가입자 정보 유출 사고 이후 통신사 이동 수요가 확대된 시장 상황에 주목하고, 경쟁 통신사 고객의 불편요인과 이동 장벽을 분석했습니다. 이를 바탕으로 고객이 자신의 사용량과 선호 혜택에 맞게 요금제를 구성할 수 있는 'YOU PLUS(+)' 상품과 통합 마케팅 전략을 제안했습니다.`,
+      problem:`SK텔레콤의 고객정보 유출 사고 이후 통신사에 대한 고객의 신뢰와 이동 수요가 변화하면서 LG유플러스에는 신규 고객을 확보할 기회가 발생했습니다.
+
+그러나 통신사 이동을 고려하는 고객도 위약금, 기존 혜택 상실, 이동 절차의 번거로움, 새로운 요금제에 대한 정보 부족 등을 이유로 실제 이동을 망설일 수 있었습니다.
+
+특히 기존 통신 요금제는 고객의 데이터 이용량과 선호 혜택을 충분히 반영하지 못한다는 불만이 있었습니다. 고객이 사용하지 않는 혜택을 포함한 요금제를 선택하거나, 자신의 이용 패턴에 맞지 않는 요금제를 유지하는 문제도 확인했습니다.
+
+따라서 단순한 가격 할인이나 일시적인 보상보다 고객의 이용 조건에 맞는 요금제를 제공하고, 통신사 이동 과정의 부담을 줄이는 전략이 필요했습니다.`,
+      analysis:`먼저 통신 3사의 경쟁 환경과 고객 이동 현황을 조사했습니다. SK텔레콤의 해킹 사고 이후 통신시장 변화를 분석하고, KT와 LG유플러스가 제시한 고객 유치 혜택 및 마케팅 전략을 비교했습니다.
+
+이후 고객을 기존 통신사에 잔류하는 이유에 따라 네 집단으로 구분했습니다.
+
+- 잔여 위약금에 따른 비용 부담이 큰 고객
+- 통신사 이동 과정의 번거로움으로 이동을 망설이는 고객
+- 기존 가족결합·장기혜택을 중요하게 생각하는 고객
+- 멤버십 혜택과 서비스 경험을 중시하는 고객
+
+고객군별 불편요인과 이동 장벽을 분석하고, 요금제 선택 과정에서 필요한 정보와 혜택을 구조화했습니다.
+
+고객 인터뷰와 AI 기반 키워드 분류·군집화를 통해 반복적으로 나타나는 요구사항을 정리했습니다. 특히 데이터 사용량, 선택 가능한 혜택, 요금 계산의 투명성 및 가입 절차의 간편성이 고객의 요금제 선택에 영향을 미치는 요소라고 판단했습니다.
+
+분석 결과를 바탕으로 고객이 직접 요금제 구성 요소를 선택하고, 해당 선택에 따른 예상 요금을 즉시 확인할 수 있는 상품 구조를 설계했습니다.`,
+      action:`**1. 조립형 요금제 'YOU PLUS(+)'**
+
+고객이 필요한 상품 구성과 혜택을 선택할 수 있는 조립형 요금제 YOU PLUS(+)를 제안했습니다.
+
+고객은 먼저 음성·데이터·문자 등 기본 요금제를 선택하고, 이후 자신의 생활 패턴에 맞는 부가혜택을 추가하도록 설계했습니다. 혜택 선택 결과와 요금 조건을 반영한 최종 금액을 실시간으로 확인할 수 있도록 상품 이용 흐름을 구성했습니다.
+
+**2. 고객 이용 목적별 혜택 구성**
+
+OTT를 즐기는 고객, 와이파이보다 데이터 사용을 선호하는 고객, 온라인 쇼핑을 자주 이용하는 고객 등 이용 목적에 따라 선택할 수 있는 혜택을 제안했습니다.
+
+고객이 실제로 활용하는 서비스에 맞춰 요금제의 체감 가치를 높이고, 사용하지 않는 혜택에 비용을 지불한다는 불만을 완화하는 방향으로 상품을 설계했습니다.
+
+**3. 실시간 요금제 큐레이션**
+
+고객이 AI 기반 챗봇 및 상담 인터페이스를 통해 자신의 사용량과 선호 혜택을 입력하면 적합한 요금제 구성을 추천받는 서비스를 기획했습니다.
+
+고객이 선택한 조건별 예상 요금을 비교할 수 있도록 안내하여 상품 선택에 필요한 정보 탐색과 계산 과정을 단순화했습니다.
+
+**4. 통신사 이동 고객 대상 프로모션**
+
+기존 통신사 고객의 이동 장벽을 낮추기 위해 요금제 혜택을 직접 체험할 수 있는 프로모션을 제안했습니다.
+
+온라인에서는 고객이 자신의 요금제 구성 결과를 공유하고, 참여형 이벤트를 통해 새로운 혜택을 경험하도록 설계했습니다. 오프라인에서는 체험형 팝업스토어와 참여 프로그램을 활용하여 서비스에 대한 이해와 가입 의향을 높이는 전략을 수립했습니다.
+
+**5. 통합 마케팅 커뮤니케이션 및 예산 계획**
+
+요금제 인지도 확보, 가입 초기 혜택 제공, 고객 참여 유도, 오프라인 체험 등으로 프로모션을 구분했습니다.
+
+각 단계별 실행 방식과 비용을 비교하고, IMC 예산표를 통해 캠페인 운영에 필요한 비용을 검토했습니다. 신규 고객 유입뿐 아니라 가입 이후의 이용 활성화까지 고려한 통합 마케팅 전략을 설계했습니다.`,
+      result:`- 마케팅전략 팀 프로젝트 **1위**
+- 조립형 요금제 및 디지털 서비스 프로토타입 기획
+- 고객 세분화 기반 통합 마케팅 전략과 실행 예산안 수립`,
+      figures:[
+        {at:0, src:"assets/lgu-1.webp", cap:"조립형 요금제 YOU PLUS(+) 콘셉트"},
+        {at:4, src:"assets/lgu-2.webp", cap:"PLACE 전략 — ‘원클릭 장바구니’ 프로세스"},
+        {at:4, src:"assets/lgu-3.webp", cap:"PLACE 전략 — AI 기반 ‘요금제 큐레이션 상담사’"},
+        {at:4, src:"assets/lgu-4.webp", cap:"PROMOTION 전략 — 지울수록 명확해진다 (체험 공간 구조)"},
+        {at:4, src:"assets/lgu-5.webp", cap:"PROMOTION 전략 — 과잉의 방 · 덜어내는 길 · 비움의 방 · 나만의 방"}
+      ] }
+  ],
+
+  samsung: [
+    { id:"samsung-work", title:"AT WORK Lock-In 전략", category:"Workplace Wealth Management", image:"assets/samsung-work-cover.webp",
+      figures:[
+        {at:2, src:"assets/samsung-work-1.webp", cap:"고객 정의 — 자체 설문조사(n=112) 결과"},
+        {at:4, src:"assets/samsung-work-2.webp", cap:"AARRR 퍼널 단계별 커뮤니케이션 메시지 도출"},
+        {at:4, src:"assets/samsung-work-3.webp", cap:"Navigator · Watcher 세그먼트 대상 최적 커뮤니케이션 전략"},
+        {at:4, src:"assets/samsung-work-4.webp", cap:"Pathfinder · Settler 세그먼트 대상 최적 커뮤니케이션 전략"}
+      ],
+      lead:"고객 행동 및 금융역량 분석을 통한 자산관리 서비스 Lock-In 전략",
+      overview:`삼성증권의 기업 임직원 대상 자산관리 서비스 AT WORK의 지속적인 이용을 유도하기 위한 Lock-In 전략을 기획했습니다.
+
+AT WORK는 기업 임직원을 대상으로 금융상품과 자산관리 서비스를 제공하는 Workplace Wealth Management 서비스입니다. 고객의 금융역량과 투자 성향에 따라 서비스 이용 방식이 달라진다는 점에 주목하여, 고객 세분화와 맞춤형 커뮤니케이션을 중심으로 서비스 개선 전략을 수립했습니다.`,
+      problem:`삼성증권은 AT WORK를 통해 기업 임직원과의 금융서비스 접점을 확대하고 있었으나, 서비스에 대한 낮은 인지도와 고객별 이용 수준의 차이가 지속적인 고객 관계 형성의 제약요인이었습니다.
+
+특히 자산관리 서비스는 단순히 계좌 개설이나 상품 가입을 유도하는 것만으로 고객의 장기적인 이용을 확보하기 어렵습니다. 고객이 자신의 금융지식과 투자 경험에 맞는 서비스를 제공받고, 실제 금융 행동으로 연결되는 경험을 만들어야 했습니다.
+
+따라서 모든 고객에게 동일한 상품과 혜택을 제공하는 방식에서 벗어나 고객의 금융역량 및 투자 태도에 맞춘 차별화된 서비스가 필요했습니다.`,
+      analysis:`모건스탠리와 골드만삭스 등 글로벌 금융회사의 Workplace Wealth Management 서비스를 조사했습니다. 기업 임직원 대상 자산관리 서비스의 고객 확보 방식과 금융상품 제공 구조, 맞춤형 자산관리 기능을 비교하여 삼성증권의 차별화 방향을 검토했습니다.
+
+삼성증권 mPOP 이용자의 라이프스테이지와 자산 수준, 금융서비스 이용 특성을 분석하고, 금융지식 수준과 투자 태도를 기준으로 고객을 네 집단으로 분류했습니다.
+
+- **Navigator:** 금융지식이 높고 능동적으로 투자하는 숙련 투자자
+- **Pathfinder:** 금융지식은 상대적으로 낮지만 적극적으로 투자하려는 입문 투자자
+- **Settler:** 금융지식은 높지만 자산관리에 소극적인 숙련 투자자
+- **Watcher:** 금융지식과 투자 참여도가 모두 낮은 입문 투자자
+
+특히 Pathfinder와 Settler 집단은 투자 의향 또는 금융지식이라는 성장 기반을 갖추고 있어 적절한 서비스 지원을 제공할 경우 장기 고객으로 발전할 가능성이 있다고 판단했습니다.
+
+또한 112명을 대상으로 정량·정성 조사를 진행하여 고객의 금융정보 수요와 선호 메시지를 분석했습니다. 고객별 투자 목적과 금융지식 수준에 따라 필요한 정보의 유형과 커뮤니케이션 방식이 다르다는 점을 확인하고, 이를 고객 여정 단계별 전략 수립에 반영했습니다.`,
+      action:`**1. 고객군별 차별화된 CRM 전략**
+
+고객의 금융역량 및 투자 태도에 따라 필요한 정보를 구분하고, 고객 확보·활성화·매출·유지·추천으로 이어지는 AARRR 퍼널을 활용하여 단계별 커뮤니케이션을 설계했습니다.
+
+Pathfinder에게는 금융지식 습득과 투자 경험 축적을 지원하는 콘텐츠를, Settler에게는 자산관리의 편의성과 투자 실행을 유도하는 정보를 제공하도록 구성했습니다. Navigator와 Watcher 역시 각 고객군의 투자 경험과 참여 수준에 맞춰 메시지와 서비스를 차별화했습니다.
+
+**2. AT WORK 서비스 UI/UX 개편**
+
+고객이 AT WORK의 다양한 금융서비스를 쉽게 확인할 수 있도록 서비스 화면의 정보 구조를 개선하는 방안을 제안했습니다. 자산 현황, 금융상품 및 서비스 기능을 직관적으로 탐색할 수 있도록 주요 기능의 접근성을 높이고, 서비스 인지부터 실제 이용까지의 고객 동선을 재설계했습니다.
+
+**3. 맞춤형 자산관리 기능**
+
+Pathfinder와 Settler 고객의 투자 행동을 지원하기 위해 포트폴리오 관리 기능과 투자 미션 프로그램을 제안했습니다. 고객이 자신의 자산 현황과 투자 목표를 확인하고, 금융지식 습득 및 투자 활동을 지속하도록 단계별 기능을 구성했습니다.
+
+**4. 고객 유지 및 추가 이용 활성화**
+
+Navigator에게는 자동 투자 기능 등 효율적인 자산관리 서비스를, Watcher에게는 CMA 연계 혜택과 같은 일상적인 금융 접점을 제안했습니다.
+
+고객군별 금융역량과 투자 행동의 차이를 서비스 설계에 반영하여 초기 고객 확보에서 장기적인 자산관리 관계로 이어지는 전략을 수립했습니다.` },
+
+    { id:"samsung-overseas", title:"해외주식 고객 확보 및 거래 활성화 전략", category:"Customer Acquisition & Trading Strategy",
+      image:"assets/samsung-overseas-cover.webp",
+      figures:[
+        {at:2, src:"assets/samsung-overseas-1.webp", cap:"경쟁사 분석 — 투자가 익숙하지 않은 고객층의 여정과 니즈"},
+        {at:2, src:"assets/samsung-overseas-2.webp", cap:"경쟁사 분석 — 재무 목표와 전략을 가진 고객층의 여정과 니즈"},
+        {at:4, src:"assets/samsung-overseas-3.webp", cap:"딥 링크: 투자의 문 — 모니모 ↔ mPOP 연계 실행방안"},
+        {at:4, src:"assets/samsung-overseas-4.webp", cap:"딥 링크 적용 전·후 연동성 체감 설문(n=73)"}
+      ],
+      lead:"투자 목적별 고객 세분화와 모니모–mPOP 연계를 통한 해외주식 서비스 전략",
+      overview:`삼성증권의 해외주식 고객 확보 및 거래 활성화를 목표로 국내 투자시장 환경과 경쟁 증권사의 서비스 전략을 분석하고, 투자자의 이용 목적에 맞는 차별화된 금융서비스를 기획했습니다.
+
+특히 금융정보 탐색부터 실제 거래까지 이어지는 고객 경험에 주목하고, 삼성금융의 모니모와 삼성증권 mPOP을 연계하여 해외주식 투자에 대한 관심을 실제 거래로 연결하는 전략을 제안했습니다.`,
+      problem:`국내 투자자의 해외주식 관심과 거래 규모는 성장하고 있었지만, 시장 경쟁이 확대되면서 단순한 거래 기능이나 수수료 혜택만으로는 고객을 지속적으로 확보하기 어려운 상황이었습니다.
+
+해외주식 투자자는 투자 목적과 금융지식 수준에 따라 서로 다른 서비스를 요구합니다. 투자 경험이 부족한 고객은 시장과 종목에 대한 이해를 높일 수 있는 정보가 필요한 반면, 투자 경험이 많은 고객은 자신의 투자 목표에 맞는 효율적인 정보 탐색과 거래 환경을 중요하게 생각합니다.
+
+따라서 고객의 투자 목적에 따라 필요한 서비스와 정보를 구분하고, 해외주식에 대한 관심을 실제 이용과 거래로 전환할 수 있는 고객 경험이 필요했습니다.`,
+      analysis:`먼저 국내 증권사의 해외주식 시장 경쟁 현황과 투자자 특성을 분석했습니다. 해외주식 거래 고객의 증가 추이와 주요 증권사의 서비스 경쟁력을 검토하고, 토스증권과 키움증권 등 경쟁사의 차별화 요소를 비교했습니다.
+
+토스증권은 친숙한 UI/UX를 기반으로 투자 진입 장벽을 낮추고 있었으며, 키움증권은 전문적인 투자정보와 거래 환경을 제공하고 있었습니다. 이러한 분석을 통해 삼성증권이 고객의 투자 목적에 따라 차별화된 경험을 제공할 수 있는 기회를 검토했습니다.
+
+해외주식 투자자를 **투자지식이 부족하지만 투자의향이 있는 고객**과 **명확한 재무 목표 및 투자전략을 가진 고객**으로 구분했습니다.
+
+첫 번째 집단은 해외주식에 관심이 있지만 기업과 종목에 대한 이해가 부족해 투자 과정에서 어려움을 경험하는 고객이었습니다. 두 번째 집단은 자신만의 투자 목적이 명확하고 종목 및 시장에 대한 정보를 적극적으로 탐색하는 고객이었습니다.
+
+각 집단의 정보 탐색, 서비스 이용 및 거래 과정을 고객 여정으로 구조화하여 필요한 정보와 서비스 기능을 도출했습니다.`,
+      action:`**1. 모니모–mPOP 연계 고객 여정 설계**
+
+투자 경험이 부족한 고객에게는 모니모를 통해 친숙한 금융정보와 해외주식 콘텐츠를 제공하고, 실제 투자를 희망하는 고객은 mPOP의 거래 기능으로 연결하는 전략을 수립했습니다.
+
+투자 경험이 많은 고객에게는 mPOP의 전문적인 투자정보와 거래 기능을 중심으로 서비스를 제공하도록 설계했습니다. 고객의 투자 목적에 따라 서비스 진입 경로와 제공 정보를 차별화했습니다.
+
+**2. 해외주식 투자정보 콘텐츠 및 투자 경험 확대**
+
+해외주식 투자에 대한 심리적 진입 장벽을 낮추기 위해 투자정보와 체험 요소를 결합한 콘텐츠를 제안했습니다.
+
+해외주식 투자와 관련된 정보를 직관적으로 전달하고, 친숙한 콘텐츠를 활용하여 투자 경험이 부족한 고객의 관심과 참여를 유도하도록 설계했습니다.
+
+**3. 딥링크 기반 서비스 연결**
+
+고객이 투자정보를 확인한 이후 별도의 탐색 과정을 반복하지 않고 실제 거래 기능으로 이동할 수 있도록 모니모와 mPOP 간 연계 방안을 제안했습니다.
+
+정보 탐색과 거래 실행 사이의 단절을 줄이고, 고객이 필요한 정보를 확인한 시점에 다음 행동을 수행할 수 있도록 고객 동선을 구성했습니다.
+
+**4. 금융 콘텐츠 및 고객 접점 확대**
+
+해외주식에 대한 관심을 높이기 위한 옥외광고 및 스포츠 연계 마케팅, 고객의 일상과 투자를 연결하는 콘텐츠 전략을 제안했습니다.
+
+또한 삼성금융 서비스 간 연계 경험을 강화하고, 고객의 관심에 따라 관련 금융정보와 서비스를 지속적으로 접할 수 있도록 신규 고객 유입과 이용 활성화 전략을 구체화했습니다.` },
+
+    { id:"samsung-market", title:"대체거래소 도입에 따른 시장 변화 대응 전략", category:"Market Structure & Business Strategy",
+      image:"assets/samsung-market-cover.webp",
+      figures:[
+        {at:4, src:"assets/samsung-market-1.webp", cap:"흘러가는 시간이 곧 나의 투자 자산 — 시장분석·고객니즈·전략제안"},
+        {at:4, src:"assets/samsung-market-2.webp", cap:"삼성 스마트 오더 — 조건부 자동주문 서비스 기능 설계"},
+        {at:4, src:"assets/samsung-market-3.webp", cap:"카카오톡 채널화 및 맞춤형 추천을 통한 교차거래 유도"}
+      ],
+      lead:"거래시간 확대에 따른 시장 변화 분석 및 증권 서비스 대응 전략",
+      overview:`국내 대체거래소 넥스트레이드(NXT)의 출범과 거래시간 확대에 따른 시장 변화가 증권사의 사업 운영과 고객 투자 행동에 미치는 영향을 분석했습니다.
+
+국내외 증권시장 운영 구조와 주요 증권사의 대응 사례를 비교하고, 거래 가능 시간 확대에 따른 신규 사업기회와 서비스 운영상 고려사항을 도출했습니다. 이를 바탕으로 자동주문 기능과 고객 생활시간대에 맞춘 투자정보 제공 전략을 수립했습니다.`,
+      problem:`대체거래소 출범으로 국내 주식시장의 거래 가능 시간이 확대되면서 투자자는 기존 정규 거래시간 이외에도 주식 매매를 진행할 수 있게 되었습니다.
+
+그러나 거래시간 확대가 고객의 투자 편의성을 높이는 동시에 새로운 문제를 발생시킬 가능성도 있었습니다. 거래시장별 운영 방식과 주문 처리 구조가 복잡해지고, 고객이 직접 시장과 거래시간을 고려해야 하는 상황이 발생할 수 있기 때문입니다.
+
+특히 투자자가 업무나 일상생활을 병행하는 상황에서 거래시간이 확대되더라도 적절한 투자 시점과 종목을 판단하기 어렵다면 서비스의 실질적인 활용도가 낮아질 수 있습니다.
+
+따라서 거래시간 확대 자체보다 **확대된 거래환경을 고객이 얼마나 쉽고 효율적으로 활용할 수 있는지**를 중심으로 대응 전략을 수립했습니다.`,
+      analysis:`국내 정규시장과 넥스트레이드의 거래시간, 주문 처리 방식 및 거래 구조를 비교했습니다. 대체거래소 출범에 따른 거래량과 시장 변동성의 변화를 검토하고, 주문을 복수 시장에 배분하는 스마트 주문 라우팅(SOR) 시스템의 역할을 분석했습니다.
+
+또한 글로벌 증권사인 Interactive Brokers와 일본의 Japannext 등 해외 사례를 조사했습니다. 시간 외 거래 서비스의 운영 방식과 고객 이용 추이, 거래 접근성을 높이기 위한 시스템 및 서비스 기능을 비교했습니다.
+
+고객 분석에서는 확장된 시간대의 거래 수요와 열린 투자자의 요구를 검토했습니다. 미국과 한국의 시간 외 거래 사례를 조사하고, 정규시장 이외의 거래를 활용하려는 투자자가 어떤 편의성과 정보를 필요로 하는지 분석했습니다.
+
+이러한 분석을 통해 거래시간 확대 환경에서 고객의 거래 판단을 지원하는 자동주문 기능과 생활시간대에 맞춘 투자정보 제공의 필요성을 도출했습니다.`,
+      action:`**1. 조건부 자동주문 서비스 '삼성 스마트 오더'**
+
+투자자가 원하는 조건을 미리 설정하면 해당 조건에 따라 주문을 진행할 수 있는 삼성 스마트 오더 서비스를 제안했습니다.
+
+고객이 직접 장시간 시장을 모니터링하지 않더라도 사전에 설정한 조건에 따라 거래할 수 있도록 주문 기능을 설계했습니다. 거래 가능 시간의 확대에 맞춰 주문 유형과 실행 조건을 구체화하고, 고객의 투자 편의성과 서비스 이용 효율성을 높이는 방향을 제시했습니다.
+
+**2. 생활시간대 맞춤형 투자정보 서비스 '삼성 데일리 픽'**
+
+고객의 생활시간과 투자 관심사를 고려하여 맞춤형 종목 및 투자정보를 제공하는 삼성 데일리 픽을 기획했습니다.
+
+출근·점심·퇴근 등 고객이 금융정보를 확인할 수 있는 시간대에 맞춰 투자정보를 제공하고, 고객의 관심 종목과 투자 성향을 반영한 콘텐츠를 구성했습니다.
+
+**3. AI 기반 투자정보 추천**
+
+고객의 투자 관심사와 시장 상황을 활용하여 관련 종목과 투자 시나리오를 제안하는 서비스 기능을 구상했습니다.
+
+단순히 종목 정보를 나열하기보다 고객이 자신의 투자 목적과 시장 상황을 함께 고려할 수 있도록 정보를 구조화하고, 투자정보 확인 이후 주문 기능으로 자연스럽게 연결되는 경험을 설계했습니다.
+
+**4. 시장 변화에 따른 운영 대응**
+
+거래시장 확대에 따른 주문 처리 구조와 고객 안내 방식의 변화도 검토했습니다. 고객이 복수 거래시장의 특성과 거래시간을 쉽게 이해할 수 있도록 서비스 운영 시나리오를 정리하고, 거래 접근성과 위험요인을 함께 고려한 대응 방향을 제안했습니다.` }
+  ],
+
+  other: [
+    { id:"binggrae", group:"summit", org:"빙그레", name:"빙그레", title:"북미 소비자 분석을 통한 TikTok 채널 운영 및 브랜드 현지화 전략", category:"Global Marketing & Content Strategy",
+      period:"2024.04", role:"SUMM&IT 산학협력 프로젝트", metric:"우수상", metricLabel:"채널 운영 부문",
+      lead:"북미 소비자와 콘텐츠 소비 행태를 분석해 공식 TikTok 채널 'Binggrae, Period.' 운영 전략을 기획했습니다.",
+      overview:`빙그레의 북미 시장 브랜드 인지도 확대를 목표로 현지 소비자와 콘텐츠 소비 행태를 분석하고, 공식 TikTok 채널 운영 전략을 기획했습니다.
+
+기존 국내 시장에서의 브랜드 인지도가 북미 소비자의 구매 의사결정에 그대로 연결되기 어렵다는 점에 주목했습니다. 현지 소비자가 빙그레의 제품과 브랜드를 자연스럽게 인식할 수 있도록 목표 고객군을 세분화하고, 고객 특성에 맞춘 숏폼 콘텐츠 전략을 수립했습니다.`,
+      problem:`빙그레는 메로나와 바나나맛 우유 등 해외에서도 경쟁력을 갖춘 제품을 보유하고 있었지만, 북미 시장에서는 국내에서 형성된 브랜드 자산을 동일하게 활용하기 어려웠습니다.
+
+특히 현지 소비자는 제품 자체를 알고 있더라도 해당 제품이 빙그레 브랜드의 상품이라는 점을 인식하지 못하는 경우가 있었습니다. 또한 국내에서 효과적이었던 콘텐츠와 마케팅 방식이 북미 소비자의 문화 및 플랫폼 이용 특성과 일치하지 않을 수 있다는 문제가 있었습니다.
+
+따라서 단순히 제품을 홍보하는 것이 아니라 북미 소비자에게 빙그레만의 브랜드 이미지를 전달할 수 있는 콘텐츠 전략이 필요했습니다.`,
+      analysis:`북미 시장에서 판매되는 빙그레 제품의 유통 현황과 소비자 리뷰를 조사했습니다. 메로나와 바나나맛 우유에 대한 현지 반응을 검토하고, 제품 인지도와 브랜드 인지도를 구분하여 분석했습니다.
+
+북미 소비자의 소셜미디어 이용 행태와 숏폼 콘텐츠 소비 트렌드를 조사했습니다. 특히 TikTok의 이용자 특성 및 경쟁 브랜드의 채널 운영 사례를 비교하여 현지 소비자가 반응하는 콘텐츠의 형식과 주제를 파악했습니다.
+
+목표 시장 분석에서는 Z세대와 히스패닉 소비자에 주목했습니다.
+
+Z세대의 경우 짧고 직관적인 콘텐츠, 트렌드 참여 및 사용자 간 공유를 중요하게 생각한다는 점을 검토했습니다. 히스패닉 소비자에 대해서는 식문화와 사회적 관계, 제품 구매 특성 등을 분석하여 현지 고객의 문화적 맥락을 반영한 접근이 필요하다고 판단했습니다.
+
+이를 바탕으로 북미 소비자의 일상적인 제품 사용 장면과 문화적 관심사를 브랜드 콘텐츠에 반영하는 방향을 설정했습니다.`,
+      action:`**1. 'Binggrae, Period.' 브랜드 콘셉트**
+
+빙그레의 제품과 브랜드를 북미 소비자에게 명확하게 각인시키기 위한 공식 TikTok 채널 콘셉트 'Binggrae, Period.'를 제안했습니다.
+
+**2. #Shopwithme**
+
+북미 소비자의 쇼핑·하울 콘텐츠 소비 방식을 활용하여 현지 마트에서 빙그레 제품을 직접 구매하는 과정을 보여주는 콘텐츠를 기획했습니다.
+
+직원이 퇴근 후 마트에 방문하여 메로나와 바나나맛 우유 등을 구매하는 일상적인 영상 형식을 활용하고, 현지 소비자가 제품의 판매처와 구매 상황을 자연스럽게 이해하도록 설계했습니다.
+
+**3. #BehindtheScenes**
+
+식품의 제조 및 생산 과정을 활용한 숏폼 콘텐츠를 제안했습니다. 메로나의 생산·포장 과정처럼 시각적으로 반복되는 작업 장면을 활용하여 소비자의 흥미와 시청 몰입을 유도하도록 구성했습니다.
+
+**4. #Recipes**
+
+북미 소비자의 식문화를 반영한 레시피 콘텐츠를 기획했습니다. 메로나를 활용한 음료와 빙그레 딸기맛 우유를 활용한 히스패닉 전통 디저트 Arroz con Leche 등 고객군별 식문화에 맞는 제품 활용 방안을 제시했습니다.
+
+**5. 사용자 참여형 콘텐츠**
+
+TikTok의 투표, 댓글 및 사용자 제작 콘텐츠(UGC) 기능을 활용하여 소비자가 브랜드 콘텐츠에 직접 참여하는 전략을 제안했습니다.
+
+고객이 선호하는 메로나 맛을 선택하거나 자신만의 빙그레 제품 경험을 공유하는 콘텐츠를 통해 브랜드와 소비자 간 상호작용을 확대하도록 설계했습니다.`,
+      result:`- 빙그레 산학협력 프로젝트 **채널 운영 부문 우수상**`,
+      figures:[
+        {at:2, src:"assets/binggrae-1.webp", cap:"시장 분석 — Generation Z의 SNS·콘텐츠 트렌드 선도"},
+        {at:2, src:"assets/binggrae-2.webp", cap:"시장 분석 — Ethnic Group 구분 및 인종별 식품 소비 현황"},
+        {at:2, src:"assets/binggrae-3.webp", cap:"목표 집단 설정 — Generation Z · Hispanic"},
+        {at:2, src:"assets/binggrae-4.webp", cap:"고객 FGI — Prosumer와 Collective Identity"},
+        {at:4, src:"assets/binggrae-5.webp", cap:"#BehindtheScenes — 음식 제조 과정을 담은 콘텐츠 트렌드"},
+        {at:4, src:"assets/binggrae-6.webp", cap:"#HOW_I_MET_BINGGRAE — UGC 기반 메로나 트럭 이벤트"}
+      ] },
+
+    { id:"kiwoom", group:"summit", org:"키움증권", name:"키움증권", title:"2030세대의 ISA 상품 가입 및 이용 활성화를 위한 고객 전략", category:"Financial Product Sales Strategy",
+      period:"2024.04", role:"SUMM&IT 산학협력 프로젝트", metric:"최우수상", metricLabel:"산학협력 마케팅 프로젝트",
+      lead:"고객 여정 기반 판매전략과 프로야구 구단 연계 마케팅으로 2030세대의 ISA 가입과 이용 활성화를 기획했습니다.",
+      overview:`키움증권의 중개형 ISA 상품에 대한 2030세대 고객의 관심과 가입을 확대하기 위한 금융상품 판매전략을 기획했습니다.
+
+ISA 상품의 시장 환경과 투자자 특성을 분석하고, 고객의 금융상품 인지부터 가입 및 이용에 이르는 과정을 구조화했습니다. 이를 바탕으로 온라인 판매채널과 프로야구 구단 연계 마케팅을 활용한 신규 고객 유입 및 활성화 전략을 수립했습니다.`,
+      problem:`ISA는 절세 혜택과 자산관리 기능을 제공하는 금융상품이지만, 2030세대 고객은 상품의 구조와 활용 방법을 충분히 이해하지 못하는 경우가 있었습니다.
+
+특히 금융상품 가입을 유도하는 과정에서 혜택만을 일방적으로 설명하는 방식은 고객의 실제 관심과 투자 목적을 반영하기 어렵다는 문제가 있었습니다.
+
+고객이 상품의 필요성을 인식하는 단계와 실제 가입을 고려하는 단계에서 필요한 정보가 다르기 때문에 고객의 투자 경험과 상품 이해도에 맞춘 차별화된 접근이 필요했습니다.`,
+      analysis:`ISA 상품의 시장 현황과 주요 증권사의 판매전략을 분석했습니다. 경쟁사의 ISA 프로모션과 신규 고객 확보 방식, 고객별 금융상품 이용 특성을 비교하여 키움증권의 개선 기회를 검토했습니다.
+
+고객 인터뷰 및 거래 데이터 분석을 통해 2030세대의 투자 행태와 상품에 대한 인식을 파악했습니다. 2030세대 고객의 경우 금융정보를 온라인으로 탐색하고, 다른 투자자의 경험과 정보를 참고한다는 점에 주목했습니다.
+
+또한 고객의 구매 여정을 인지, 고려, 결정 및 활용 단계로 구분하고 각 단계에서 나타나는 정보 요구와 구매 장벽을 분석했습니다.
+
+금융상품 가입을 고려하는 과정에서는 절세 혜택뿐 아니라 상품의 실제 활용 가능성과 투자 목적에 대한 이해가 필요하다는 점을 도출했습니다.`,
+      action:`**1. 고객 여정 기반 판매전략**
+
+ISA 상품의 인지부터 가입 및 실제 이용까지 이어지는 고객 여정을 설계하고, 단계별로 필요한 금융정보와 마케팅 접점을 구분했습니다.
+
+초기 단계에서는 ISA의 필요성과 혜택을 알리고, 가입을 고려하는 단계에서는 구체적인 활용 사례와 상품 정보를 제공하도록 구성했습니다.
+
+**2. 온라인 채널 중심 고객 유입**
+
+고객의 정보 탐색 및 온라인 가입 특성을 고려하여 디지털 채널 기반의 판매전략을 제안했습니다.
+
+금융상품 콘텐츠와 고객의 관심사를 연결하고, 상품정보 확인 이후 실제 가입으로 이어질 수 있도록 커뮤니케이션을 설계했습니다.
+
+**3. 프로야구 구단 연계 마케팅**
+
+2030세대 고객과의 접점을 확대하기 위해 프로야구 구단 연계 캠페인을 기획했습니다.
+
+야구장이라는 생활·여가 공간에서 ISA 상품의 인지도를 높이고, 현장 이벤트와 상품 정보를 연결하는 고객 유입 전략을 제안했습니다.
+
+**4. 가입 이후 고객 활성화**
+
+고객이 ISA 계좌를 개설한 이후에도 상품을 지속적으로 활용할 수 있도록 금융정보 제공과 고객관리 방안을 수립했습니다.
+
+가입 이후의 투자 활동과 장기적인 상품 이용을 고려한 커뮤니케이션을 설계하여 신규 고객 확보와 유지 전략을 연결했습니다.`,
+      result:`- 키움증권 산학협력 마케팅 프로젝트 **최우수상**`,
+      figures:[
+        {at:2, src:"assets/kiwoom-1.webp", cap:"고객분석 — 중개형 ISA 가입자는 투자의 자율성과 적극성을 중시"},
+        {at:2, src:"assets/kiwoom-2.webp", cap:"고객분석 — 2030세대의 적극적인 투자 성향"},
+        {at:2, src:"assets/kiwoom-3.webp", cap:"고객분석 — 정보를 찾는 과정에서도 나타나는 2030세대의 적극성"},
+        {at:2, src:"assets/kiwoom-4.webp", cap:"고객여정 — 결정&활용 단계의 USP 강조 필요"},
+        {at:4, src:"assets/kiwoom-5.webp", cap:"Proposal 02. 야구장 이벤트 — 야구는 키움, ISA 계좌도 키움!"},
+        {at:4, src:"assets/kiwoom-6.webp", cap:"Negotiation 01. 유튜버 콜라보레이션 콘텐츠"}
+      ] },
+
+    { id:"megabox", group:"summit", org:"메가박스", name:"메가박스", title:"2030세대의 여가 목적 분석을 통한 멤버십 활성화 및 고객 유지 전략", category:"Membership & CRM Strategy",
+      period:"2024.05", role:"SUMM&IT 산학협력 프로젝트", metric:"장려상", metricLabel:"MEGA LINK 마케팅 부문",
+      lead:"여가 목적별로 멤버십을 세분화한 'The Gallery of Megabox'와 AARRR 기반 CRM을 제안했습니다.",
+      overview:`메가박스의 20대 고객 확보와 멤버십 이용 활성화를 목표로 고객의 영화관 이용 행태와 여가 목적을 분석하고 신규 멤버십 전략을 기획했습니다.
+
+기존 영화관 멤버십이 할인과 가격 혜택에 집중되어 있다는 점에 주목하여, 고객의 개인적인 취향과 경험을 반영하는 'The Gallery of Megabox' 멤버십 모델을 제안했습니다.`,
+      problem:`기존 메가박스 멤버십은 할인 혜택과 일괄적인 서비스 안내에 집중되어 있어 고객이 멤버십 가입에 따른 차별화된 가치를 체감하기 어려웠습니다.
+
+특히 여가 활동을 중심으로 소비하는 20대 고객은 가격 혜택뿐 아니라 새로운 경험과 개인 취향에 맞는 콘텐츠, 사회적 교류를 중요하게 생각했습니다.
+
+그러나 메가박스는 고객의 여가 목적과 관심사를 충분히 구분하지 않고 유사한 정보를 제공하고 있었습니다. 멤버십 자체에 대한 인지도가 낮고, 개인화되지 않은 푸시 알림 역시 고객의 지속적인 관심을 유도하는 데 한계가 있었습니다.
+
+따라서 고객의 여가 목적에 따라 멤버십을 세분화하고, 가입 이후에도 고객이 지속적으로 서비스를 이용할 수 있는 경험을 설계해야 했습니다.`,
+      analysis:`다양한 산업의 멤버십을 필수 소비 중심인 Essential과 여가·취향 중심인 Optional로 구분하여 비교했습니다. 각 유형의 고객이 중요하게 생각하는 혜택과 정보 제공 방식을 분석하고, 메가박스 멤버십의 현재 구조를 검토했습니다.
+
+**자체 설문조사 210명과 FGI 8명**을 통해 고객의 멤버십 가입 경험과 선호 혜택을 조사했습니다. 영화관 멤버십에 가입하지 않거나 적극적으로 이용하지 않는 이유를 분석하고, 경험 중심 혜택과 개인화된 정보에 대한 요구를 파악했습니다.
+
+이후 20대의 여가 활동을 Social, Physical, Mental이라는 세 가지 목적을 기준으로 분석했습니다.
+
+- **Social:** 사람들과의 교류 및 관계 형성을 중시
+- **Physical:** 활동적인 경험과 감각적 즐거움을 중시
+- **Mental:** 자기만족과 감정적 몰입, 기록을 중시
+
+세 가지 고객군을 바탕으로 실제 영화 관람 실험도 진행했습니다. 피실험자가 선택한 영화를 관람한 이후의 만족도와 불편요인을 확인하고, 각 고객군의 특성에 맞는 경험을 제공한 뒤 반응을 비교했습니다.
+
+Social 고객에게는 영화에 대한 의견을 나눌 수 있는 경험을, Physical 고객에게는 영화 속 음악에 직접 참여할 수 있는 경험을, Mental 고객에게는 감정과 해석을 기록할 수 있는 경험을 제공했습니다.
+
+이를 통해 영화 관람 만족도를 높이는 요소가 고객의 여가 목적에 따라 달라질 수 있음을 확인하고 멤버십 설계에 반영했습니다.`,
+      action:`**1. 'The Gallery of Megabox' 멤버십**
+
+고객의 여가 목적과 선호 경험을 반영하여 Meet Gallery, Play Gallery, Share Gallery의 세 가지 멤버십을 제안했습니다.
+
+고객이 자신의 선호에 맞는 유형을 선택하고, 해당 유형의 콘텐츠와 혜택을 이용할 수 있도록 수평적인 멤버십 구조를 설계했습니다.
+
+**2. AARRR 기반 CRM**
+
+고객 획득·활성화·매출·유지·추천 단계에 따라 개인화된 메시지를 전달하는 CRM 전략을 수립했습니다.
+
+이전 관람 영화와 장르, 가입 멤버십 유형 등을 활용하여 고객이 관심을 가질 만한 영화와 이벤트를 적절한 시점에 안내하도록 설계했습니다.
+
+**3. 초기 가입 및 이용 활성화**
+
+신규 고객이 멤버십 혜택과 기능을 쉽게 이해할 수 있도록 웰컴 가이드와 팝업을 제안했습니다.
+
+알림 설정, 선호 지점 지정, 영화 관람 및 리뷰 작성 등의 단계별 미션을 제공하고, 미션 달성에 따른 리워드를 통해 멤버십 가입과 실제 이용을 유도하도록 기획했습니다.
+
+**4. Meet Gallery**
+
+영화 관람 이후 다른 관객과 의견을 나눌 수 있는 MEETalk과 오프라인 애프터파티를 제안했습니다. 고객이 공통의 관심사를 중심으로 교류할 수 있도록 온라인·오프라인 경험을 연결했습니다.
+
+**5. Play Gallery**
+
+영화와 연계한 원데이 클래스, 체험형 팝업스토어 등 활동 중심의 프로그램을 제안했습니다. 영화 관람을 넘어 다양한 문화·여가 경험을 제공하도록 설계했습니다.
+
+**6. Share Gallery**
+
+영화 감상 기록을 남길 수 있는 뉴스레터 및 개인화된 연말결산 콘텐츠 '메가 레코드'를 기획했습니다. 고객의 관람 기록과 선호 장르를 기반으로 개인화된 콘텐츠를 제공하고 지속적인 서비스 이용을 유도하도록 구성했습니다.`,
+      result:`- MEGA LINK 마케팅 부문 **장려상**`,
+      figures:[
+        {at:0, src:"assets/megabox-1.webp", cap:"The Gallery of Megabox — 메가박스 멤버십 활성화 방안 제안"},
+        {at:2, src:"assets/megabox-2.webp", cap:"타겟 분석 — 여가활동 향유 목적별 페르소나(Social · Physical · Mental)"},
+        {at:2, src:"assets/megabox-3.webp", cap:"인사이트 실험 — AS-IS: 타겟별 영화 관람 및 만족도"},
+        {at:2, src:"assets/megabox-4.webp", cap:"인사이트 실험 — TO-BE: 해결방안 적용 및 실험 효과"}
+      ] },
+
+    { id:"types", group:"summit", org:"Woot Corp.", name:"타입스", title:"사용자 확보 가설 수립과 채널별 실험을 통한 타입스 앱 성장 전략", category:"Growth Marketing Experiment",
+      period:"2023.07", role:"SUMM&IT 산학협력 프로젝트", metric:"대상", metricLabel:"타입스 앱 마케팅 산학 프로젝트",
+      lead:"다운로드와 기능 이용을 구분해 가설을 세우고, 세 가지 채널 실험으로 성과를 측정했습니다.",
+      overview:`Woot Corp.의 타입스 앱을 대상으로 신규 사용자 확보와 서비스 이용 활성화를 위한 그로스 마케팅 프로젝트를 진행했습니다.
+
+앱 다운로드와 기능 사용을 구분하여 성장 가설을 설정하고, 인스타그램 이벤트, 대학 커뮤니티 콘텐츠, 청소년 서포터즈 등 세 가지 실행 실험을 진행했습니다.
+
+각 실험의 참여율과 실제 서비스 이용 데이터를 측정하여 채널별 성과를 분석하고, 앱의 이용 활성화를 위한 개선방안을 도출했습니다.`,
+      problem:`신규 앱은 다운로드 수를 확보하더라도 실제 기능 이용으로 연결되지 않으면 지속적인 성장에 한계가 있습니다.
+
+특히 앱의 이용 목적과 기능을 충분히 이해하지 못하거나, 서비스를 반복적으로 이용할 동기가 부족하면 신규 사용자의 이탈이 발생할 수 있었습니다.
+
+따라서 단순히 앱 다운로드를 확대하는 것을 넘어 사용자가 핵심 기능을 이용하도록 유도하고, 기존 사용자에게도 지속적인 이용 동기를 제공하는 전략이 필요했습니다.`,
+      analysis:`사용자의 행동을 세 단계로 구분하여 서로 다른 성장 가설을 설정했습니다.
+
+첫 번째 가설은 인스타그램 이벤트를 활용한 신규 앱 다운로드 확대였습니다. 두 번째 가설은 사용자 관심사를 반영한 콘텐츠를 통해 앱 내 기능 이용을 유도하는 것이었습니다. 세 번째 가설은 서포터즈 운영을 통해 기존 설치자의 서비스 이용과 콘텐츠 공유를 촉진하는 것이었습니다.
+
+각 가설에 따라 목표 고객과 홍보 채널, 참여 조건 및 측정 지표를 구분했습니다.
+
+대학생 고객에게는 학교 생활과 관련된 콘텐츠를, 중·고등학생 고객에게는 참여 및 공유 활동을 중심으로 한 방식을 적용했습니다.`,
+      action:`**1. 인스타그램 다운로드 이벤트**
+
+타입스 앱의 다운로드와 회원가입을 유도하기 위한 인스타그램 이벤트를 진행했습니다.
+
+공식 인스타그램 계정에 이벤트 게시물을 게시하고, 프로필 링크나 QR코드를 통한 앱 다운로드, 회원가입, 스토리 공유 및 인증 절차를 참여 조건으로 설정했습니다. 이벤트 참여자를 엑셀로 관리하고 참여 현황을 집계했습니다.
+
+**2. 학교 커뮤니티 연계 콘텐츠**
+
+타입스 앱의 '호불호 월드컵' 기능을 활용하여 서강대학교 학생들이 공감할 수 있는 콘텐츠를 제작했습니다.
+
+'서강대 최고의 맛집', '서강대 최고의 낭만', '서강대에서 피하고 싶은 상황' 등 학교 생활과 관련된 주제를 선정했습니다.
+
+서담, 에브리타임, 신입생 단체 채팅방 및 학교 관련 오픈채팅방을 활용하여 콘텐츠를 홍보했습니다. 채널별 고객 특성에 맞게 홍보 주제를 차별화하고 게시물 조회 수와 실제 플레이 수를 측정했습니다.
+
+**3. 중·고등학생 서포터즈**
+
+중·고등학생을 대상으로 인스타그램 DM을 통한 서포터즈를 모집하고, 앱의 캐비넷 및 시그널 기능을 공유하는 미션을 설계했습니다.
+
+총 4명의 서포터즈를 확보하고 단계별 리워드를 제안했으나, 실제 활동에서는 미션 미달성 및 중도 포기 사례가 발생했습니다. 이를 통해 사용자 참여를 지속적으로 유지하기 위한 인센티브와 활동 구조의 개선 필요성을 확인했습니다.
+
+**4. 앱 서비스 개선방안**
+
+실험 과정에서 발견한 이용 제약을 바탕으로 서비스 개선안을 제안했습니다.
+
+시그널 기능의 이용 가능 시간 조정, 공유 링크 생성, 호불호 월드컵의 목록 화면 개선, 인스타그램 공유 기능 확대, 정기적인 신규 콘텐츠 제공 및 커뮤니티 기능 활성화 등을 검토했습니다.
+
+앱의 다운로드 확대뿐 아니라 사용자의 지속적인 참여를 유도할 수 있는 운영 방향을 구체화했습니다.`,
+      result:`- 인스타그램 다운로드 이벤트 **참여자 63명**
+- 호불호 월드컵 콘텐츠별 플레이 수 **57회·72회·31회**
+- 활동 실적 기준 **2주 내 활성 사용자 297명, 전환율 10%**
+- 타입스 앱 마케팅 산학 프로젝트 **대상**` },
+
+    { id:"cheerful", group:"additional", org:"Cheerful", name:"Cheerful", title:"고령층의 인지건강 관리와 조기 검진 접근성 개선을 위한 서비스 기획", category:"AI Service Planning",
+      period:"2023.07 — 2023.08", role:"SK mySUNI 교육 과정", metric:"FGI·UT", metricLabel:"고령층 6명 대상 검증",
+      lead:"치매 검진에 대한 거부감과 디지털 이용 장벽을 낮추는 AI 대화형 서비스 'Cheerful'을 기획했습니다.",
+      overview:`SK mySUNI 교육 과정에서 고령층의 인지건강 관리와 치매 조기 발견을 지원하기 위한 AI 기반 서비스 'Cheerful'을 기획했습니다.
+
+치매 검진에 대한 심리적 거부감과 디지털 서비스 이용의 어려움을 주요 문제로 정의하고, 고령층이 일상생활에서 친숙하게 인지건강을 관리할 수 있는 서비스 콘셉트와 프로토타입을 설계했습니다.`,
+      problem:`치매는 조기 발견과 관리가 중요하지만, 일부 고령층은 치매에 대한 두려움과 진단 거부감으로 인해 검진을 미루는 경우가 있었습니다.
+
+또한 기존 디지털 건강관리 서비스는 복잡한 기능과 화면 구성으로 인해 고령층이 이용하기 어렵다는 문제가 있었습니다.
+
+따라서 병원이나 전문기관의 검진을 대체하기보다, 일상생활에서 인지건강에 관심을 갖고 필요한 경우 전문적인 검진으로 연결될 수 있도록 지원하는 서비스가 필요했습니다.`,
+      analysis:`치매 관련 자료와 기존 인지건강 관리 서비스를 조사하고, 서비스 기능과 이용상의 장단점을 비교했습니다.
+
+만 55세 이상 고령층 6명을 대상으로 FGI를 진행하여 치매에 대한 인식, 검진 경험, 예방 활동에 대한 관심 및 디지털 서비스 이용의 어려움을 조사했습니다.
+
+조사에서는 서비스 자체에 대한 관심은 높았지만 스마트폰 이용에 대한 부담이 존재한다는 점을 확인했습니다.
+
+이에 사용자의 거부감을 낮추기 위해 친숙한 AI 캐릭터와 대화형 인터페이스를 도입하고, 단순한 기능 구성과 명확한 안내를 제공하는 방향으로 서비스 전략을 설정했습니다.
+
+또한 K-MMSE 문항과 관련 기관의 인지건강 점검 자료를 참고하여 인지기능 점검에 활용할 문항을 구성했습니다. 이는 서비스 기획 단계의 참고 기준으로 활용했으며, 의료적으로 검증된 독립 진단 도구를 개발한 것은 아닙니다.`,
+      action:`**1. AI 캐릭터 기반 대화형 서비스**
+
+손자·손녀를 연상시키는 친숙한 AI 캐릭터를 통해 사용자가 자연스럽게 대화하고 인지건강 관리 활동에 참여하도록 서비스를 설계했습니다.
+
+**2. 인지기능 점검 및 결과 안내**
+
+AI와의 대화 및 문항 응답을 활용하여 사용자의 인지기능 상태를 점검하는 기능을 기획했습니다. 결과를 사용자가 이해하기 쉬운 형태로 제공하고, 추가 검진이 필요한 경우 전문기관 방문을 안내하도록 구성했습니다.
+
+**3. 맞춤형 인지기능 훈련**
+
+기억력, 언어능력, 시공간능력, 판단력 및 주의력 영역을 중심으로 게임형 인지훈련 기능을 설계했습니다.
+
+사용자의 상태와 난이도에 따라 활동을 선택할 수 있도록 하고, 대화·운동·일상 미션 등 다양한 예방 활동을 구성했습니다.
+
+**4. 지역 보건 프로그램 연계**
+
+사용자 위치를 기반으로 가까운 보건소와 지자체에서 제공하는 인지건강 관리 프로그램을 안내하는 기능을 기획했습니다.
+
+**5. 사용자 테스트 및 프로토타입 개선**
+
+만 55세 이상 고령층 6명을 대상으로 1차 사용자 테스트를 진행했습니다. 테스트 결과 글자 크기와 색상, 홈 화면 버튼 배치, 마이크 기능 안내 및 게임 난이도 등에 개선이 필요하다는 점을 확인했습니다.
+
+이에 화면 가독성을 높이고 기능 접근성을 개선한 2차 프로토타입을 제작했습니다.`,
+      result:`- 고령층 6명 대상 FGI 및 사용자 테스트 진행
+- 1차 테스트 피드백을 반영한 프로토타입 개선
+- 2차 테스트에서 참여자 전원 **가독성 및 사용성 개선에 만족**`,
+      figures:[
+        {at:0, src:"assets/cheerful-1.webp", cap:"Cheerful — 당신의 활기찬 두뇌를 위하여!"},
+        {at:2, src:"assets/cheerful-2.webp", cap:"Point of Difference — 치매 진단 및 예방을 위한 기존 서비스 비교"},
+        {at:4, src:"assets/cheerful-3.webp", cap:"아이디어 정리"},
+        {at:4, src:"assets/cheerful-4.webp", cap:"서비스 기능 구체화"},
+        {at:4, src:"assets/cheerful-5.webp", cap:"서비스 구성 (정보 구조)"},
+        {at:4, src:"assets/cheerful-7.webp", cap:"프로토타입 — AI 캐릭터와 대화를 통해 치매 진단하기"},
+        {at:5, src:"assets/cheerful-6.webp", cap:"유저 테스트 — 1차 피드백 반영 및 2차 프로토타입 개선"}
+      ] },
+
+    { id:"buddy", group:"additional", org:"Buddy", name:"Buddy", title:"시각장애인의 버스 승차 문제 해결을 위한 이동 지원 서비스 설계", category:"ESG Service Design",
+      period:"2022.05 — 2022.11", role:"SKT × 청년재단 오픈콜라보 클래스", metric:"12분 단축", metricLabel:"버스 탑승 소요시간(현장 검증)",
+      lead:"버스 정차 위치와 노선 식별 문제를 핵심 과제로 정의하고 승하차 지원 서비스 'Buddy'를 설계했습니다.",
+      overview:`SKT × 청년재단 오픈콜라보 클래스에서 시각장애인의 대중교통 이용 편의성을 높이기 위한 버스 승하차 지원 서비스 'Buddy'를 기획했습니다.
+
+시각장애인의 버스 이용 과정에서 발생하는 주요 불편요인을 분석하고, 버스 정차 위치와 노선 인식의 어려움을 해결하기 위한 서비스 프로토타입을 설계했습니다.`,
+      problem:`시각장애인의 버스 이용률은 다른 교통약자 집단에 비해 낮은 수준으로 나타났습니다. 특히 버스를 이용하는 과정에서 정류장 위치 확인, 도착 버스 식별, 승차 위치 파악, 하차벨 이용 등 여러 단계의 어려움이 발생했습니다.
+
+그중 버스 정차 위치와 노선 번호를 확인하는 과정은 실제 현장에서 다양한 변수가 발생하여 해결이 어려운 문제였습니다.
+
+버스가 정해진 위치에 정차하지 않거나 여러 대의 버스가 동시에 도착하는 상황, 우천 시 시야와 주변 환경의 변화, 다른 승객으로 인해 버스 번호가 가려지는 상황 등이 대표적인 제약요인이었습니다.`,
+      analysis:`국토교통부의 교통약자 이동 관련 자료와 기존 장애인 이동 지원 서비스를 조사했습니다. 시각장애인의 버스 이용 과정을 정류장 인식, 버스 도착 확인, 노선 식별, 승차, 하차 등으로 분해하여 단계별 문제를 분석했습니다.
+
+이후 기존 기술과 지원 서비스를 비교하여 이미 해결 가능한 영역과 추가적인 개선이 필요한 영역을 구분했습니다.
+
+현장 체험 및 사용자 인터뷰를 통해 시각장애인이 특히 어려움을 겪는 단계가 버스 도착과 노선 확인이라는 점을 파악하고, 해당 문제를 핵심 해결 과제로 설정했습니다.`,
+      action:`**1. 정류장 위치 확인**
+
+사용자가 버스 정류장에 도착하면 GPS를 통해 현재 정류장을 인식하도록 설계했습니다.
+
+**2. 희망 버스 노선 선택**
+
+해당 정류장에 도착하는 버스 목록을 확인하고, 사용자가 탑승하려는 노선을 선택할 수 있도록 구성했습니다.
+
+**3. 버스 기사 알림**
+
+사용자가 특정 버스에 탑승하기를 희망한다는 정보를 버스 기사에게 전달하는 알림 기능을 기획했습니다.
+
+**4. 지정 위치 대기 및 승차**
+
+버스가 이전 정류장을 출발하면 사용자에게 알림을 제공하고, 정해진 승차 위치에서 대기할 수 있도록 서비스를 설계했습니다.
+
+이후 현장 검증을 통해 실제 이용 과정에서 서비스가 제공하는 편의성을 확인하고, 향후 승하차 전 과정으로 기능을 확대하는 방향을 검토했습니다.`,
+      result:`- 현장 검증에서 앱 사용 이전 대비 **버스 탑승 소요시간 12분 단축**
+- 사용자 인터뷰를 통한 서비스 편의성 확인`,
+      figures:[
+        {at:0, src:"assets/buddy-1.webp", cap:"ESG CLASS — 버디(Buddy): 버스 승하차 디딤돌"},
+        {at:4, src:"assets/buddy-3.webp", cap:"해결 방안 — 솔루션 제시 (Step 1~4)"},
+        {at:4, src:"assets/buddy-2.webp", cap:"Buddy 앱 프로토타입 화면"},
+        {at:4, src:"assets/buddy-5.webp", cap:"보완 계획 — 버스 탑승·하차 전 과정으로 확대"},
+        {at:5, src:"assets/buddy-4.webp", cap:"성과 지표 — 현장 검증 결과(정성·정량)"}
+      ] },
+
+    { id:"kbo", group:"additional", org:"DOMESIRAK", name:"돔시락", title:"야구장 식음료 문제 해결과 지역 상권 활성화를 위한 신규 사업모델", category:"Regional Business Development",
+      period:"2024.08", role:"KBO NINE 2024 Beyond Region", metric:"한국연구재단이사장상", metricLabel:"한국연구재단",
+      lead:"고척돔 식음료 선택지 문제를 커스터마이징 도시락과 전통시장 상생 모델로 풀었습니다.",
+      overview:`KBO NINE 2024 Beyond Region 프로젝트에서 고척스카이돔 관람객의 식음료 이용 만족도를 높이고 주변 전통시장과의 상생을 도모하는 커스터마이징 도시락 브랜드 'DOMESIRAK'을 기획했습니다.
+
+야구장 내 제한적인 식음료 선택의 문제를 해결하기 위해 관람객이 원하는 메뉴를 선택할 수 있는 도시락 상품을 제안하고, 인근 전통시장을 제품 공급 및 운영 과정에 연계하는 사업모델을 설계했습니다.`,
+      problem:`고척스카이돔은 관람객의 식음료 선택지가 제한적이라는 문제가 있었습니다. 특히 관람객이 원하는 메뉴를 충분히 선택하기 어렵고, 구장 내 식음료 다양성이 낮아 만족도에 영향을 미칠 수 있었습니다.
+
+반면 인근 전통시장은 다양한 식음료 상품을 제공할 수 있음에도 야구장 관람객의 소비와 충분히 연결되지 못하고 있었습니다.
+
+따라서 구장 내 식음료 다양성을 높이는 동시에 지역 상권과 연계하여 새로운 소비 수요를 창출할 수 있는 사업모델이 필요했습니다.`,
+      analysis:`고척스카이돔의 식음료 판매 환경과 관람객 이용 행태를 조사했습니다. 야구장 내 판매 메뉴와 구매 동선, 관람객의 불편요인을 검토하고, 고척스카이돔의 식음료 선택지가 고객 만족도에 미치는 영향을 분석했습니다.
+
+인근 전통시장과 주변 상권을 직접 조사하여 시장별 식음료 상품과 판매 환경을 비교했습니다.
+
+또한 구장 관계자와 식음료 관련 이해관계자 등을 대상으로 인터뷰를 진행하여 구장 내 판매 구조와 지역 상권 연계 가능성을 검토했습니다.
+
+고객이 원하는 식음료를 조합하여 구매할 수 있도록 메뉴 선택 방식과 제품 용기, 공급·판매 협력 구조를 함께 구상했습니다.`,
+      action:`**1. 커스터마이징 도시락 'DOMESIRAK'**
+
+관람객이 원하는 메뉴를 조합하여 구매할 수 있는 커스터마이징 도시락을 기획했습니다.
+
+구장 내부의 제한적인 식음료 선택지를 보완하고, 고객별 식사 선호와 구매 상황을 반영할 수 있도록 상품 구조를 설계했습니다.
+
+**2. 고척스카이돔 형상 다회용기**
+
+고척스카이돔의 외형을 활용한 도시락 전용 다회용기를 기획했습니다.
+
+야구장만의 공간적 특성을 제품 디자인에 반영하고, 일회용기 사용을 줄이는 친환경 가치를 함께 제안했습니다.
+
+**3. 전통시장 상생 협력모델**
+
+인근 전통시장의 판매자가 도시락 메뉴 공급에 참여하는 협력 구조를 구상했습니다.
+
+지역 상권의 다양한 식음료 상품을 도시락에 반영하여 고객의 선택 폭을 넓히고, 경기장 관람 수요가 주변 상권의 매출 기회로 연결될 수 있도록 설계했습니다.
+
+**4. 프로야구 구단 연계 마케팅**
+
+키움 히어로즈와의 연계를 가정하여 구단 마스코트와 경기장 이벤트를 활용한 도시락 홍보 방안을 제안했습니다.
+
+경기장 내 콘텐츠와 관람객 참여 이벤트를 통해 제품 인지도를 높이고, 야구 관람 경험과 식음료 소비를 연결하는 전략을 수립했습니다.`,
+      result:`- KBO NINE 2024 Beyond Region **한국연구재단이사장상** 수상`,
+      figures:[
+        {at:0, src:"assets/kbo-1.webp", cap:"커스터마이징 도시락 돔시락 : DOMESIRAK — 내용 요약"},
+        {at:2, src:"assets/kbo-3.webp", cap:"구단별 인근 시장 개수 및 고척스카이돔 인근 시장 위치"},
+        {at:4, src:"assets/kbo-2.webp", cap:"해결방안 — 고척스카이돔 디자인 도시락과 마스코트 토큰 활용"}
+      ] }
+  ],
+
+  profile: {
+    career:[
+      {period:"2026.01 — 2026.07", org:"토스페이먼츠", dept:"Risk Management Team", rank:"Assistant", role:"리스크 관리",
+        bullets:["월 2,300여 개 가맹점의 거래·운영 데이터 모니터링을 통한 이상 징후 식별 및 위험 수준별 대응 우선순위 설정","이용약관 및 내부 규정에 따른 조치 조건·이행 기한 관리, 영업부서·거래처와의 협의 및 후속 조치 수행","조치 이행 현황 점검 및 반복 사례의 관리 기준 개선을 통한 약 4.2억 원 손실 위험 방어, 조치 미이행률 9.35% → 4.05% 개선"]},
+      {period:"2025.08", org:"삼성증권", dept:"디지털트레이딩고객팀", rank:"인턴사원", role:"사업기획",
+        bullets:["고객 행동 데이터 및 경쟁사 서비스 분석을 통한 이용 단계별 문제점과 사업 운영 개선과제 도출","고객군별 요구사항 및 시장 환경 변화에 따른 서비스 운영 조건 분석, 대응 시나리오 수립","분석 결과와 실행 조건을 종합한 서비스 개선안 및 유관부서 검토용 보고자료 작성"]},
+      {period:"2024.07 — 2024.08", org:"키움증권", dept:"금융상품팀", rank:"인턴사원", role:"판매기획",
+        bullets:["시장·경쟁사 및 내부 거래 데이터 분석을 통한 고객 수요 변화와 상품 판매 현황 점검","고객군·판매채널별 운영 조건 및 문제요인 비교를 통한 개선과제와 대응 방향 도출","분석 결과의 리서치 보고서 작성 및 금융상품 판매·운영 관련 의사결정 지원"]},
+      {period:"2022.09 — 2022.12", org:"KB국민은행", dept:"하안동지점", rank:"주임", role:"CS · 영업지원",
+        bullets:["방문 고객의 요구사항 및 업무 처리 조건 확인, 금융상품·디지털 서비스 이용 지원","반복 문의와 고객 불편사항 분석을 통한 업무 처리 지연 요인 파악 및 개선방안 실행","업무 안내·처리 절차의 표준화를 통한 고객 응대 효율 개선 및 평균 대기시간 약 30분 단축"]}
+    ],
+    activities:[
+      {period:"2025.05 — 2025.09", name:"삼성증권 대학생 멤버십", kind:"팀프로젝트", role:"전략·기획",
+        bullets:["해외주식 서비스의 고객 행동·이용 데이터 및 시장 환경 분석을 통한 운영상 문제요인 도출","대체거래소 도입에 따른 거래시간 변화와 고객 이용 조건 검토, 예상 문제점 및 대응 시나리오 수립","고객군별 요구사항과 실행 조건을 반영한 서비스 개선방안 및 프로젝트 결과 보고자료 작성"]},
+      {period:"2025.03 — 2025.06", name:"마케팅전략 팀 프로젝트", kind:"팀프로젝트", role:"전략·기획",
+        bullets:["고객 인터뷰 및 AI 기반 키워드 분류·군집화를 통한 요금제 이용 현황과 고객군별 요구사항 분석","사용량·혜택 이용 조건에 따른 고객군별 요금제 구성안 설계 및 기존 상품과 대안 비교","고객 요구와 서비스 운영 조건을 종합한 개선방안 수립 및 실행 가능성 검토"]},
+      {period:"2023.03 — 2024.08", name:"마케팅 전략 학회 SUMM&IT", kind:"연구회", role:"대외협력부장",
+        bullets:["약 100건의 아웃콜을 통한 기업별 협업 수요 파악 및 신규 산학협력 파트너 발굴","기업별 사업 특성과 요구사항 분석을 바탕으로 맞춤형 협업 제안서 및 대외 협의자료 작성","외부 기업과 내부 프로젝트팀 간 협업 조건·역할 조율 및 네스프레소·다인에프씨 협약 체결"]},
+      {period:"2023.03 — 2024.08", name:"창업 프로젝트 BE;AU", kind:"팀프로젝트", role:"Project Manager",
+        bullets:["약 50건의 아웃콜과 기업소개서·협업제안서 작성으로 호텔·제작업체 발굴 및 한화호텔앤드리조트 협력 계약 체결","협력사별 공급 수량·폐기 일정·제작 가능 시점 협의 및 생산 일정 불일치에 따른 사업 수행 위험요인 분석","주요 일정·수량·공급 조건의 사전 점검 체크리스트 도입 및 크라우드펀딩 목표 대비 389% 달성"]},
+      {period:"2022.05 — 2022.11", name:"SKT × 청년재단 오픈콜라보 클래스", kind:"팀프로젝트", role:"전략·기획",
+        bullets:["현장 체험 및 고객 인터뷰를 통한 시각장애인의 버스 이용 과정과 주요 불편요인 분석","이용환경 및 요구사항을 반영한 음성 안내 서비스 기획·프로토타입 설계","사용성 테스트 결과와 고객 피드백을 바탕으로 기능별 개선과제 도출 및 운영방안 구체화"]},
+      {period:"2022.03 — 2023.02", name:"경영 학회 인액터스", kind:"연구회", role:"Project Manager",
+        bullets:["수제화 브랜드의 기획·생산·판매 과정 관리 및 협력업체 10곳 이상의 공급가격·최소 발주량 비교·협상으로 원가 약 7% 절감","고객 A/S 데이터 분석을 통한 품질 문제 원인 파악, 종이 채촌 키트 도입 및 제품 정보 제공 방식 개선","고객 안내 웹사이트 직접 제작 및 개선안 적용을 통한 차기 판매 A/S 신청 0건, 크라우드펀딩 목표 대비 535% 달성"]}
+    ],
+    education:[
+      {period:"2020.03 — 2026.08", name:"서강대학교", rows:[
+        ["전공","영문학부 미국문화전공 · 경영학부 경영학전공 (복수전공)"],
+        ["GPA","4.00 / 4.5 (전공석차: 1/7)"],
+        ["상태","졸업"]]},
+      {period:"2017.03 — 2020.02", name:"동덕여자고등학교", rows:[["상태","졸업"]]}
+    ],
+    training:[
+      {period:"2023.07.03 — 2023.08.31", hours:"200시간", name:"SK mySUNI — SK SUNI C",
+        bullets:["데이터 기반 문제 정의·구조화 및 AI 데이터 리터러시 교육 이수","고객 요구사항 분석을 통한 서비스 프로토타입 기획·운영","데이터 분석 결과에 기반한 문제 해결방안 도출 및 실행과제 구체화"]},
+      {period:"2023.05.16 — 2023.06.13", hours:"6시간", name:"㈜코멘토 — 브랜드마케팅 직무부트캠프",
+        bullets:["매출의 객수·객단가 분해 및 상권정보시스템을 활용한 수요·경쟁환경 분석","원가·인건비·임대료 등 주요 비용 항목 비교를 통한 예상 매출·영업이익 산출","후보 입지별 비용·수익 구조 분석 및 사업성 검토"]}
+    ],
+    awards:[
+      {date:"2024.08.14", name:"KBO NINE 2024 Beyond Region — 한국연구재단이사장상", issuer:"한국연구재단",
+        bullets:["스포츠·지역 상권 및 고객 수요 분석을 통한 신규 사업기회와 주요 제약요인 검토","고척스카이돔 형상 다회용기 기획·제작 및 전통시장 방문 유도 방안 수립"]},
+      {date:"2024.05.27", name:"MEGA LINK 마케팅 부문 — 장려상", issuer:"메가박스중앙㈜",
+        bullets:["2030세대 고객 이용 행태·이탈 요인 분석 및 서비스 운영 문제점 도출","타 산업 멤버십 상품·운영 조건 비교를 통한 신규 서비스 모델 및 실행전략 제안"]},
+      {date:"2024.04.09", name:"키움증권 산학협력 마케팅 프로젝트 — 최우수상", issuer:"키움증권㈜",
+        bullets:["거래 데이터와 고객 인터뷰 기반 ISA 상품 수요 및 판매 저해 요인 분석","목표 지표 설정 및 판매채널별 운영 조건 검토를 통한 온라인 판매전략·프로야구 구단 연계 방안 제안"]},
+      {date:"2024.04.05", name:"빙그레 산학협력 프로젝트 채널 운영 부문 — 우수상", issuer:"㈜빙그레",
+        bullets:["현지 고객 인터뷰·시장 데이터 분석을 통한 목표시장별 수요 및 시장 진입 제약요인 검토","아시안·히스패닉·Z세대 고객군별 목표시장 설정 및 판매채널별 진입·운영 방안 수립"]},
+      {date:"2023.07.16", name:"타입스 앱 마케팅 산학 프로젝트 — 대상", issuer:"Woot Corp.",
+        bullets:["사용자 확보 전략 수립·실행 및 고객 전환율 KPI 설정·진행 현황 모니터링","성과 데이터 분석을 통한 운영 개선 및 2주 내 활성 사용자 297명·전환율 10% 달성"]}
+    ],
+    certs:[
+      {name:"Google Analytics Certification (GA4)", detail:"Google", date:"2026.10"},
+      {name:"ADsP", detail:"한국데이터산업진흥원", date:"2025.09"},
+      {name:"OPIc (영어)", detail:"Intermediate High", date:"2025.01"}
+    ],
+    skills:[
+      {group:"Office", items:["PowerPoint · 특급","Word · 특급","Excel · 고급"]},
+      {group:"Design", items:["Adobe Photoshop · 고급"]}
+    ]
+  }
+};
+
+let current = ''; try { current = location.hash || ''; } catch(e){}
+const $ = s => document.querySelector(s);
+const E = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const hsl = (h,s,l) => `hsl(${h} ${s}% ${l}%)`;
+const byId = (list,id) => list.find(p => p.id === id);
+
+/* generated cover (no image files needed) */
+function cover(p){
+  const [h,s,l] = p.hue;
+  if(p.image) return `<div class="thumb img" style="background-image:linear-gradient(180deg,#0000 55%,#0008),url('${E(p.image)}')">
+    <span class="num">${E(p.number)} / ${E(p.subtitle)}</span></div>`;
+  return `<div class="thumb" style="background:linear-gradient(125deg,${hsl(h,s,l-10)},${hsl(h,s,l+14)})">
+    <span class="num">${E(p.number)} / ${E(p.subtitle)}</span>
+    <span class="big">${E(p.metric)}<small>${E(p.metricLabel)}</small></span></div>`;
+}
+function card(p){
+  return `<a class="workcard" href="#/project/${E(p.id)}">${cover(p)}
+    <div class="body"><span class="mini">${E(p.subtitle)}</span><h3>${E(p.org)}</h3><p>${E(p.title)}</p>
+    <div class="cardbottom"><strong>${E(p.metric)}</strong><span class="arrow">↗</span></div></div></a>`;
+}
+const barColors = ['#80b3ff','#7fd1c1','#e6b673','#c9a0e8','#9ec3ff','#8fd1a3','#f0a3a3'];
+function archiveCard(p,i){
+  return `<a class="archivecard" href="#/other/${E(p.id)}"><div class="bar" style="background:${barColors[i%barColors.length]}"></div>
+    <div class="copy"><span class="mini">${E(p.category)}</span><h3>${E(p.name||p.title)} ↗</h3><p>${E(p.name?p.title:p.lead)}</p></div></a>`;
+}
+function heading(top,title,right=''){
+  return `<div class="heading"><div><span class="overline">${E(top)}</span><h2>${E(title)}</h2></div><span class="muted">${E(right)}</span></div>`;
+}
+function crumb(...items){
+  return `<div class="crumb"><a href="#/">Home</a><span>/</span><a href="#/projects">Projects</a>${items.map(x=>`<span>/</span><span>${E(x)}</span>`).join('')}</div>`;
+}
+
+/* pages */
+function home(){
+  return `<div class="container"><section class="hero">
+    <div class="overline">Business Strategy · Data · Operations</div>
+    <h1>From Insight<br>to <em>Impact.</em></h1>
+    <p class="lead">데이터로 문제를 정의하고,<br>공통의 판단 기준을 만들며,<br>실행 가능한 해결책을 설계합니다.</p>
+    <div class="actions"><a class="button" href="#/projects">Explore Projects ↗</a><a class="button light" href="#/about">View Experience →</a></div>
+  </section>
+  <div class="metrics">
+    <div><strong>4.2억 원</strong><span>거래 리스크 잠재 손실 방어</span></div>
+    <div><strong>535%</strong><span>HANDYY 펀딩 달성률</span></div>
+    <div><strong>389%</strong><span>BE;AU 펀딩 달성률</span></div>
+  </div>
+  <section class="section">${heading('01 / Featured case studies','Selected Work','06 Projects')}
+    <div class="grid">${DATA.projects.map(card).join('')}</div>
+    <div style="text-align:center;margin-top:30px"><a class="button light" href="#/projects">View all projects →</a></div>
+  </section></div>`;
+}
+
+function projects(){
+  const onlyOther = current.includes('filter=other');
+  const summit = DATA.other.filter(p=>p.group==='summit'), rest = DATA.other.filter(p=>p.group!=='summit');
+  const list = a => `<div class="grid">${a.map(p=>`<a class="workcard" href="#/other/${E(p.id)}"><div class="body" style="min-height:190px"><span class="mini">${E(p.category)}</span><h3>${E(p.name||p.title)}</h3><p>${E(p.name?p.title:p.lead)}</p><div class="cardbottom"><span class="muted">Open case study</span><span class="arrow">↗</span></div></div></a>`).join('')}</div>`;
+  return `<div class="container"><div class="pagehero"><span class="overline">Portfolio / All Work</span><h1>Work, documented.</h1>
+    <p class="lead">시장·고객·운영의 문제를 비즈니스 성과로<br>연결해 온 프로젝트를 기록했습니다.</p></div>
+    <div class="filters">
+      <a class="filter ${!onlyOther?'selected':''}" href="#/projects">Selected Work (${DATA.projects.length})</a>
+      <a class="filter ${onlyOther?'selected':''}" href="#/projects?filter=other">Other Projects (${DATA.other.length})</a>
+    </div>
+    <section class="section" style="padding-top:6px">${onlyOther
+      ? heading('SUMM&IT','산학협력 프로젝트',summit.length+' Case Studies')+list(summit)+'<div style="height:44px"></div>'+heading('Independent','Additional Projects',rest.length+' Case Studies')+list(rest)
+      : `<div class="grid">${DATA.projects.map(card).join('')}</div>`}</section></div>`;
+}
+
+function sidebar(o){
+  const f = (k,v) => v ? `<div class="field"><small>${k}</small><strong>${E(v)}</strong></div>` : '';
+  return `<aside class="sidebar">${f('Organization',o.org)}${f('Role',o.role)}${f('Timeline',o.period)}${f('Category',o.subtitle||o.category)}${f('Highlighted Result',o.metric)}</aside>`;
+}
+/* 간단한 마크다운: 빈 줄 = 문단, **굵게**, "- " 목록, 한 줄 전체가 **굵게**면 소제목 */
+function md(text){
+  const inline = t => E(t).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  return String(text||'').trim().split(/\n{2,}/).map(b=>{
+    const lines = b.split('\n').map(l=>l.trim()).filter(Boolean);
+    if(lines.length && lines.every(l=>l.startsWith('- '))) return `<ul class="mdlist">${lines.map(l=>`<li>${inline(l.slice(2))}</li>`).join('')}</ul>`;
+    if(lines.length===1 && /^\*\*[^*]+\*\*$/.test(lines[0])) return `<h4>${E(lines[0].slice(2,-2))}</h4>`;
+    return `<p>${lines.map(inline).join('<br>')}</p>`;
+  }).join('');
+}
+/* 주요 결과: 항목마다 카드 한 장. **굵게** 부분이 큰 글씨, 나머지는 설명 */
+function resultCards(text){
+  const items = String(text||'').split('\n').map(l=>l.trim()).filter(Boolean).map(l=>l.replace(/^-\s*/,''));
+  const cols = items.length===4?2:Math.min(items.length,3);
+  return `<div class="resultgrid" style="--cols:${cols}">${items.map(t=>{
+    const m = t.match(/\*\*(.+?)\*\*/);
+    if(!m) return `<div class="rcard plain"><b>${E(t)}</b></div>`;
+    let main = m[1];
+    let sub = t.replace(m[0],'').replace(/\s+/g,' ').trim();
+    if(/\s약$/.test(sub)){ sub = sub.replace(/\s약$/,''); main = '약 '+main; }
+    return `<div class="rcard"><b>${E(main)}</b>${sub?`<small>${E(sub)}</small>`:''}</div>`;
+  }).join('')}</div>`;
+}
+function figs(p,i){
+  const f=(p.figures||[]).filter(x=>x.at===i);
+  return f.length?`<div class="figs">${f.map(x=>`<figure${x.third?' class="third"':x.half?' class="half"':''}><img src="${E(x.src)}" alt="${E(x.cap||'')}" loading="lazy">${x.cap?`<figcaption>${E(x.cap)}</figcaption>`:''}</figure>`).join('')}</div>`:'';
+}
+function tossViz(){
+  const before=9.35, after=4.05, max=10;
+  const flow=['거래·운영 데이터 모니터링으로 이상 징후 식별','위험 수준별 대응 우선순위 설정','조치 조건·이행 기한 관리 및 유관부서 협의','이행 현황 점검과 반복 사례 관리 기준 개선'];
+  return `<div class="viz"><span class="overline">Data Snapshot / Risk Management</span><h3 class="viztitle">숫자로 보는 성과</h3>
+    <div class="vizgrid">
+      <div class="vizcard"><h4>조치 미이행률 변화</h4>
+        <div class="vbar"><span>개선 전</span><div class="track"><i style="width:${before/max*100}%;background:#9aa9c2"></i></div><b>${before}%</b></div>
+        <div class="vbar"><span>개선 후</span><div class="track"><i style="width:${after/max*100}%;background:#25569b"></i></div><b>${after}%</b></div>
+        <p class="vnote">미이행률 <strong>${(before-after).toFixed(2)}%p</strong> 개선</p></div>
+      <div class="vizcard"><h4>모니터링 범위와 성과</h4>
+        <div class="vstats">
+          <div><strong>2,300+</strong><span>월 모니터링 가맹점</span></div>
+          <div><strong>6곳</strong><span>위험 징후 파악·단계별 조치</span></div>
+          <div><strong>약 4.2억 원</strong><span>잠재 손실 방어</span></div>
+        </div></div>
+      <div class="vizcard wide"><h4>모니터링 판단 흐름</h4>
+        <ol class="vflow">${flow.map((t,i)=>`<li><em>${i+1}</em><span>${E(t)}</span></li>`).join('')}</ol></div>
+    </div></div>`;
+}
+function readme(p){
+  const blocks = [['프로젝트 개요 / Overview',p.overview],['문제 정의 / Problem',p.problem],['분석 과정 / Analysis',p.analysis],['핵심 인사이트 / Key Insight',p.insight],['실행 전략 / Strategy',p.action],['주요 결과 / Outcome',p.result]];
+  return `<div class="readme"><div class="readmebar"><span>▤ README.md</span><span style="font-weight:400;color:#8b99ad">PROJECT CASE STUDY</span></div>
+    <div class="readmeinner"><span class="overline">Case Study / Business Problem Solving</span>
+    ${p.name?'':`<h2>${E(p.title||p.org)}</h2>`}<p>${E(p.lead)}</p>
+    ${p.tags?`<div class="pillrow">${p.tags.map(t=>`<span class="pill">${E(t)}</span>`).join('')}</div>`:''}
+    <div class="steps"><div class="step">Define<small>문제 정의</small></div><div class="step">Analyze<small>근거 분석</small></div><div class="step">Design<small>전략 설계</small></div></div>
+    ${blocks.map(([t,v],i)=>i===5?figs(p,5):v?`<h3>${E(t)}</h3><div class="md">${md(v)}</div>${figs(p,i)}`:'').join('')}
+    ${p.viz==='toss'?tossViz():''}
+    ${(p.website||p.links)?`<p class="linkrow">${p.website?`<a class="button light" href="${E(p.website)}" target="_blank" rel="noopener noreferrer">HANDYY 웹사이트 보기 ↗</a>`:''}${(p.links||[]).map(l=>`<a class="button light" href="${E(l.url)}" target="_blank" rel="noopener noreferrer">${E(l.label)} ↗</a>`).join('')}</p>`:''}
+    </div></div>`;
+}
+function project(id){
+  const p = byId(DATA.projects,id); if(!p) return notFound();
+  const body = p.children
+    ? `<div class="readme"><div class="readmebar"><span>▤ README.md</span><span>03 CASE STUDIES</span></div><div class="readmeinner"><h2>삼성증권 · 전략 프로젝트 3개</h2>
+       <p>거래시간 확대에 따른 시장 대응, 해외주식 이용 고객 확대, 기업 임직원 대상 AT WORK 서비스의 고객 유지 전략을 연결한 세 가지 분석·전략 과제입니다.</p>
+       <div class="casegrid">${p.children.map(cid=>{const c=byId(DATA.samsung,cid);return `<a class="case" href="#/case/${E(cid)}">${c.image?`<img class="casethumb" src="${E(c.image)}" alt="">`:''}<span class="mini">${E(c.category)}</span><strong>${E(c.title)} ↗</strong><p>${E(c.lead)}</p></a>`}).join('')}</div></div></div>`
+    : readme(p);
+  return `<div class="container"><div class="pagehero">${crumb(p.org)}<span class="overline">${E(p.number)} / ${E(p.subtitle)}</span><h1>${E(p.org)}</h1><p class="lead">${E(p.title)}<br>${E(p.lead)}</p>${p.image?`<div class="detailcover"><img src="${E(p.image)}" alt="${E(p.org)} 대표 이미지"></div>`:''}</div>
+    <div class="detaillayout">${sidebar(p)}<div>${body}</div></div></div>`;
+}
+function casePage(id){
+  const p = byId(DATA.samsung,id); if(!p) return notFound();
+  return `<div class="container"><div class="pagehero">${crumb('삼성증권',p.title)}<span class="overline">Samsung Securities / ${E(p.category)}</span><h1>${E(p.title)}</h1><p class="lead">${E(p.lead)}</p>${p.image?`<div class="detailcover"><img src="${E(p.image)}" alt="${E(p.title)} 대표 이미지"></div>`:''}</div>
+    <div class="detaillayout">${sidebar({...p,org:'삼성증권',role:'전략·기획 참여',period:'2025.05 — 2025.09'})}<div>${readme(p)}<p style="margin-top:18px"><a class="button light" href="#/project/samsung">← 삼성증권 프로젝트 3개로 돌아가기</a></p></div></div></div>`;
+}
+function otherPage(id){
+  const p = byId(DATA.other,id); if(!p) return notFound();
+  return `<div class="container"><div class="pagehero">${crumb('Other Projects',p.name||p.title)}<span class="overline">${p.group==='summit'?'SUMM&IT / Industry Collaboration':'Additional Work'} / ${E(p.category)}</span><h1>${E(p.name||p.title)}</h1><p class="lead">${E(p.name?p.title:p.lead)}</p></div>
+    <div class="detaillayout">${sidebar(p)}<div>${readme(p)}<p style="margin-top:18px"><a class="button light" href="#/projects?filter=other">← Other Projects</a></p></div></div></div>`;
+}
+function bulletList(a){ return `<ul class="bul">${a.map(t=>`<li>${E(t)}</li>`).join('')}</ul>`; }
+function about(){
+  const x = DATA.profile;
+  const tl = (items, head) => `<div class="timeline">${items.map(a=>`<div class="timeitem"><span class="muted">${E(a.period)}${a.hours?`<br>${E(a.hours)}`:''}</span><div><h3>${E(a.name||a.org)}</h3>
+    <div class="mini" style="margin-top:8px">${head(a)}</div>${bulletList(a.bullets)}</div></div>`).join('')}</div>`;
+  const panel = (t,html) => `<div class="panel"><h3>${t}</h3>${html}</div>`;
+  return `<div class="container"><div class="pagehero"><span class="overline">Information / Experience</span>
+    <h1>Structured thinking.<br><span style="color:var(--blue)">Measurable impact.</span></h1>
+    <p class="lead">시장과 고객의 요구를 분석하고,<br>실행 가능한 판단 기준으로 전환합니다.</p>
+    <a class="button light" style="margin-top:22px" href="#/projects">View Projects ↗</a></div>
+    <section class="section" style="padding-top:10px">${heading('01 / Education','학력')}
+      <div class="info-columns">
+        ${x.education.map(e=>panel(E(e.name)+`<span class="muted" style="font-weight:400;margin-left:8px">${E(e.period)}</span>`,e.rows.map(([k,v])=>`<div class="item"><span class="mini">${E(k)}</span><p style="font-size:13.5px;color:var(--ink);margin-top:4px">${E(v)}</p></div>`).join(''))).join('')}
+      </div></section>
+    <section class="section">${heading('02 / Certifications & Skills','자격 · 어학 · 도구')}
+      <div class="info-columns">
+        ${panel('Certifications',x.certs.map(a=>`<div class="item"><span class="mini">${E(a.date)}</span><strong>${E(a.name)}</strong><p>${E(a.detail)}</p></div>`).join(''))}
+        ${panel('Tools & Skills',x.skills.map(a=>`<div class="item"><span class="mini">${E(a.group)}</span><p>${a.items.map(E).join(' · ')}</p></div>`).join(''))}
+      </div></section>
+    <section class="section">${heading('03 / Career','경력')}
+      ${tl(x.career,a=>[a.dept,a.rank,a.role].filter(Boolean).map(E).join(' · '))}</section>
+    <section class="section">${heading('04 / Activities','경험')}
+      ${tl(x.activities,a=>[a.kind,a.role].filter(Boolean).map(E).join(' · '))}</section>
+    <section class="section">${heading('05 / Training','교육')}
+      ${tl(x.training,a=>`교육기간 ${E(a.period)} · 교육시간 ${E(a.hours)}`).replace(/<br>[^<]*<\/span>/g,'</span>')}</section>
+    <section class="section">${heading('06 / Recognition','수상')}
+      <div class="timeline">${x.awards.map(a=>`<div class="timeitem"><span class="muted">${E(a.date)}</span><div><h3>${E(a.name)}</h3>
+        <div class="mini" style="margin-top:8px">수상기관 ${E(a.issuer)}</div>${bulletList(a.bullets)}</div></div>`).join('')}</div></section></div>`;
+}
+function experience(){ return about(); }
+function notFound(){ return `<div class="container"><section class="hero"><h1>Page not found.</h1><a class="button" href="#/">Home →</a></section></div>`; }
+
+function render(){
+  const raw = decodeURI(current.replace(/^#\/?/,''));
+  const parts = raw.split('/'); const page = parts[0].split('?')[0];
+  $('#app').innerHTML = !page ? home()
+    : page==='projects' ? projects()
+    : page==='project' ? project(parts[1])
+    : page==='case' ? casePage(parts[1])
+    : page==='other' ? otherPage(parts[1])
+    : page==='experience' ? experience()
+    : page==='about' ? about() : notFound();
+  const active = ['project','case','other'].includes(page) ? 'projects' : (page==='experience'?'about':(page||'home'));
+  document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===active));
+  window.scrollTo(0,0);
+}
+/* 링크 클릭을 직접 처리: 미리보기(iframe) 환경에서도 페이지 이동이 되도록 */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#/"]');
+  if (!a) return;
+  e.preventDefault();
+  current = a.getAttribute('href');
+  try { history.pushState(null,'',current); } catch(err){ try { location.hash = current; } catch(e2){} }
+  render();
+});
+window.addEventListener('popstate',()=>{ try{ current = location.hash || ''; }catch(e){} render(); });
+window.addEventListener('hashchange',()=>{ try{ current = location.hash || ''; }catch(e){} render(); });
+render();
+</script>
+</body>
+</html>
